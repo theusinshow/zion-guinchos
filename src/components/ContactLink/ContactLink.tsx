@@ -16,7 +16,7 @@ type Props = {
 /**
  * Link de conversão (WhatsApp/ligação). Destino e tracking vêm dos helpers centrais.
  * TODO(P0): enquanto o número estiver pendente (null), renderiza igual à referência,
- * porém sem href, com aria-disabled e data-pending — nunca um destino falso.
+ * porém sem href, com aria-disabled, data-pending e texto acessível (DEC-024) — nunca um destino falso.
  */
 export function ContactLink({ channel, placement, message = 'default', event, className, children }: Props) {
   const href = channel === 'whatsapp' ? getWhatsappHref(message) : getPhoneHref()
@@ -27,6 +27,7 @@ export function ContactLink({ channel, placement, message = 'default', event, cl
     return (
       <a className={className} role="link" aria-disabled="true" data-pending={channel} data-track={trackEvent} data-placement={placement}>
         {children}
+        <span className="visually-hidden"> (contato pendente)</span>
       </a>
     )
   }

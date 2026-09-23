@@ -16,7 +16,8 @@ export function HowItWorks() {
       </h2>
 
       <div className={styles.flow}>
-        {/* Trajetos: SVG do export v2 (desktop 1312×88, mobile 28×420). */}
+        {/* Trajeto desktop: SVG do export v2 (1312×88). No mobile, o trajeto 28×420 do export é
+            desenhado por etapa (marcador + linha que acompanha a altura + diagonal), para crescer com o texto. */}
         <svg className={styles.pathDesktop} viewBox="0 0 1312 88" aria-hidden="true">
           <polyline points="7,64 300,64 340,24 600,24 640,64 897,64 1312,64" fill="none" stroke="currentColor" strokeWidth="2" />
           <rect x="0" y="57" width="14" height="14" className={styles.markerFirst} />
@@ -24,16 +25,19 @@ export function HowItWorks() {
           <rect x="890.7" y="57" width="14" height="14" fill="currentColor" />
           <polyline points="1300,56 1312,64 1300,72" fill="none" stroke="currentColor" strokeWidth="2" />
         </svg>
-        <svg className={styles.pathMobile} viewBox="0 0 28 420" aria-hidden="true">
-          <polyline points="7,7 7,140 21,160 21,280 7,300 7,420" fill="none" stroke="currentColor" strokeWidth="2" />
-          <rect x="0" y="0" width="14" height="14" className={styles.markerFirst} />
-          <rect x="14" y="146" width="14" height="14" fill="currentColor" />
-          <rect x="0" y="286" width="14" height="14" fill="currentColor" />
-        </svg>
 
         <ol className={styles.steps}>
           {STEPS.map((step, index) => (
             <li key={step.title} className={styles.step}>
+              <span className={styles.track} aria-hidden="true">
+                <span className={styles.marker} />
+                <span className={styles.line} />
+                {index < STEPS.length - 1 && (
+                  <svg className={styles.turn} viewBox="0 0 28 20">
+                    <polyline points={index % 2 === 0 ? '7,0 21,20' : '21,0 7,20'} />
+                  </svg>
+                )}
+              </span>
               <span className={styles.number} aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}
               </span>

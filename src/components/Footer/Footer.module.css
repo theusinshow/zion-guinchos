@@ -1,0 +1,203 @@
+/* Footer — export v2 "Footer · Mobile" / "Desktop". Grid editorial, hairline ink forte no topo. */
+
+.footer {
+  background: var(--color-offwhite);
+  border-top: 2px solid var(--color-ink);
+}
+
+.main {
+  display: grid;
+  gap: 28px;
+  padding: 36px var(--grid-gutter) 28px;
+}
+
+.brand {
+  display: grid;
+  gap: 12px;
+}
+
+.logo {
+  width: 84px;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+.description {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.quickActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.quickButton {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  padding: 0 22px;
+  font-size: 16px;
+}
+
+.quickButton :global(.btn-arrow) {
+  font-size: 13px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.label {
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--color-muted);
+}
+
+.navLink {
+  display: block;
+  padding: 3px 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.contact {
+  display: none;
+}
+
+.contactList {
+  display: grid;
+  gap: 10px;
+}
+
+.contactLink {
+  display: grid;
+  gap: 2px;
+}
+
+.contactName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Glifo ausente no Plex Mono: monospace do sistema, como no export */
+.contactArrow {
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--color-red);
+}
+
+.contactNumber {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--color-muted);
+}
+
+.regionItem {
+  padding: 3px 0;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+}
+
+.legal {
+  margin-top: 22px;
+}
+
+.privacy {
+  padding-bottom: 2px;
+  border-bottom: var(--hairline) solid var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.cnpj {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--color-muted);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 56px;
+  padding: 0 var(--grid-gutter);
+  border-top: var(--hairline) solid var(--color-border-light);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: var(--color-muted);
+}
+
+.credit {
+  color: var(--color-ink);
+}
+
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    gap: 0 var(--grid-gap);
+    padding: 48px var(--grid-gutter) 44px;
+  }
+
+  .brand {
+    grid-column: 1 / span 3;
+    gap: 16px;
+    align-content: start;
+  }
+
+  .logo {
+    width: 104px;
+  }
+
+  .description {
+    max-width: 30ch;
+  }
+
+  .quickActions {
+    display: none;
+  }
+
+  .columns,
+  .side {
+    display: contents;
+  }
+
+  .nav {
+    grid-column: 5 / span 2;
+  }
+
+  .contact {
+    grid-column: 7 / span 2;
+    display: block;
+  }
+
+  .region {
+    grid-column: 9 / span 2;
+  }
+
+  .regionItem {
+    font-size: 11px;
+  }
+
+  .legal {
+    grid-column: 11 / span 2;
+    margin-top: 0;
+  }
+}

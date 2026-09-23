@@ -19,11 +19,9 @@
   font-weight: 400;
 }
 
-/* Mobile: trajeto vertical à esquerda das etapas */
+/* Mobile: trajeto vertical à esquerda das etapas; cada etapa desenha seu trecho e cresce com o texto.
+   Em 390px (zoom normal) reproduz o SVG 28×420 do export: linhas de 146/140/134px. */
 .flow {
-  display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  column-gap: 16px;
   margin-top: 36px;
   color: var(--color-ink);
 }
@@ -32,24 +30,80 @@
   display: none;
 }
 
-.pathMobile {
-  width: 28px;
-  height: 420px;
-}
-
 .markerFirst {
   fill: var(--color-red);
 }
 
-.steps {
-  display: grid;
-  grid-template-rows: 146px 140px 134px;
-}
-
 .step {
+  position: relative;
   display: grid;
   gap: 6px;
   align-content: start;
+  min-height: 146px;
+  padding-left: 44px;
+}
+
+.step:nth-child(2) {
+  min-height: 140px;
+}
+
+.step:nth-child(3) {
+  min-height: 134px;
+}
+
+.track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+}
+
+.marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  background: var(--color-ink);
+}
+
+.step:first-child .marker {
+  background: var(--color-red);
+}
+
+.step:nth-child(2) .marker {
+  left: 14px;
+}
+
+.line {
+  position: absolute;
+  top: 7px;
+  bottom: 6px;
+  left: 6px;
+  width: 2px;
+  background: var(--color-ink);
+}
+
+.step:nth-child(2) .line {
+  left: 20px;
+}
+
+.step:last-child .line {
+  bottom: 0;
+}
+
+.turn {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 0;
+  width: 28px;
+  height: 20px;
+  overflow: visible;
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 2;
 }
 
 .number {
@@ -100,7 +154,8 @@
     align-items: end;
   }
 
-  .mobileBreak {
+  .mobileBreak,
+  .track {
     display: none;
   }
 
@@ -141,16 +196,18 @@
     overflow: visible;
   }
 
-  .pathMobile {
-    display: none;
-  }
-
   .steps {
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
-    grid-template-rows: none;
     column-gap: var(--grid-gap);
     margin-top: 28px;
+  }
+
+  .step,
+  .step:nth-child(2),
+  .step:nth-child(3) {
+    min-height: 0;
+    padding-left: 0;
   }
 
   .step {

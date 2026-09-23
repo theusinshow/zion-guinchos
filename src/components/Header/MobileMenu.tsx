@@ -5,23 +5,55 @@ import styles from './Header.module.css'
 
 const FOCUSABLE = 'a[href], button:not([disabled])'
 
-/** Menu mobile (DEC-019): painel abaixo do header, Escape fecha, trava scroll, foco volta ao botão. */
+/** Fundo que fica inerte com o menu aberto: conteúdo da página + itens do header fora do menu. */
+function backgroundElements(header: HTMLElement | null): HTMLElement[] {
+  const page = [...document.querySelectorAll<HTMLElement>('main, footer')]
+  const headerItems = header ? [...header.querySelectorAll<HTMLElement>('[data-menu-background]')] : []
+  return [...page, ...headerItems]
+}
+
+/** Foca o destino de uma âncora (tabIndex=-1 quando não focável) para manter a posição do leitor/teclado. */
+function focusAnchorTarget(hash: string) {
+  const target = document.getElementById(decodeURIComponent(hash.slice(1)))
+  if (!target) return
+  if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1')
+  history.pushState(null, '', hash)
+  target.focus()
+}
+
+/**
+ * Menu mobile (DEC-019). Modal: role=dialog + aria-modal, fundo inert, scroll travado,
+ * Tab circula entre botão e painel, Escape fecha e devolve o foco ao botão.
+ */
 export function MobileMenu({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false)
   const panelId = useId()
   const buttonRef = useRef<HTMLButtonElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
+  const pendingHash = useRef<string | null>(null)
 
   const close = useCallback((restoreFocus: boolean) => {
     setOpen(false)
     if (restoreFocus) buttonRef.current?.focus()
   }, [])
 
+  // Depois de fechar por âncora: fundo já sem inert e scroll liberado, então foca o destino.
+  useEffect(() => {
+    if (open || !pendingHash.current) return
+    focusAnchorTarget(pendingHash.current)
+    pendingHash.current = null
+  }, [open])
+
   useEffect(() => {
     if (!open) return
-    const header = buttonRef.current?.closest('header')
+    const header = buttonRef.current?.closest('header') ?? null
     const top = header ? header.getBoundingClientRect().bottom : 0
     panelRef.current?.style.setProperty('--menu-top', `${Math.max(top, 0)}px`)
+
+    const background = backgroundElements(header)
+    background.forEach((element) => {
+      element.inert = true
+    })
 
     const { overflow } = document.body.style
     document.body.style.overflow = 'hidden'
@@ -43,12 +75,19 @@ export function MobileMenu({ children }: { children: React.ReactNode }) {
       }
     }
     const onResize = () => {
-      if (window.matchMedia('(min-width: 1024px)').matches) close(false)
+      if (!window.matchMedia('(min-width: 1024px)').matches) return
+      const hadFocus = panelRef.current?.contains(document.activeElement) || document.activeElement === buttonRef.current
+      close(false)
+      // O botão e o painel somem no desktop: foco vai para o controle visível equivalente (nav principal).
+      if (hadFocus) header?.querySelector<HTMLElement>('nav a[href]')?.focus()
     }
 
     document.addEventListener('keydown', onKeyDown)
     window.addEventListener('resize', onResize)
     return () => {
+      background.forEach((element) => {
+        element.inert = false
+      })
       document.body.style.overflow = overflow
       document.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('resize', onResize)
@@ -76,10 +115,17 @@ export function MobileMenu({ children }: { children: React.ReactNode }) {
         ref={panelRef}
         id={panelId}
         className={styles.menuPanel}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
         data-open={open}
         hidden={!open}
         onClick={(event) => {
-          if ((event.target as HTMLElement).closest('a[href]')) close(false)
+          const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="#"]')
+          if (!link) return
+          event.preventDefault()
+          pendingHash.current = link.hash
+          close(false)
         }}
       >
         {children}

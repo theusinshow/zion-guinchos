@@ -33,6 +33,10 @@
   display: none;
 }
 
+.call {
+  display: flex;
+}
+
 .callLink {
   width: 84px;
   display: flex;
@@ -188,7 +192,7 @@
     font-size: 14px;
   }
 
-  .callLink,
+  .call,
   .menuToggle,
   .menuPanel {
     display: none;

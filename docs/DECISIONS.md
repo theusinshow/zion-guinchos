@@ -116,6 +116,8 @@ Não adicionar cards, gradients, glass, glow, pills ou decoração automática f
 
 **Impacto:** composição do mapa preservada; nenhuma cidade não confirmada publicada.
 
+**Esclarecimento (revisão da Fase 4):** a legenda segue a composição de cada breakpoint da referência — 3 itens no desktop, 2 no mobile. DEC-018 regula conteúdo, não layout.
+
 ## DEC-019 — Estado aberto do menu mobile
 
 **Status:** aprovado (Tech Lead, Fase 0).

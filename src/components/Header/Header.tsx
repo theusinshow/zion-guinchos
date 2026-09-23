@@ -14,7 +14,7 @@ export const NAV_LINKS = [
 export function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.brand}>
+      <div className={styles.brand} data-menu-background>
         <Link href="/" className={styles.logo}>
           {/* TODO(asset): trocar pelo SVG do logo quando existir (OPEN-ITEMS P1). */}
           <Image src="/brand/zion-logo.png" alt="Zion Guincho" width={640} height={420} sizes="104px" />
@@ -35,20 +35,24 @@ export function Header() {
         </ContactLink>
       </div>
 
-      <ContactLink channel="phone" placement="header" className={styles.callLink}>
-        Ligar
-      </ContactLink>
+      <div className={styles.call} data-menu-background>
+        <ContactLink channel="phone" placement="header" className={styles.callLink}>
+          Ligar
+        </ContactLink>
+      </div>
 
       <MobileMenu>
-        <ul className={styles.menuList}>
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className={styles.menuLink}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <nav aria-label="Principal">
+          <ul className={styles.menuList}>
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className={styles.menuLink}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
         <div className={styles.menuActions}>
           <ContactLink channel="whatsapp" placement="menu" className={`btn btn-primary ${styles.menuButton}`}>
             Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true">→</span>

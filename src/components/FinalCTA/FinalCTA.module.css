@@ -1,0 +1,231 @@
+/* CTA final — export v2 "CTA final · Mobile" / "Desktop". Fechamento dark, diferente da urgência. */
+
+.section {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-ink);
+  color: var(--color-offwhite);
+}
+
+.lion {
+  position: absolute;
+  top: -60px;
+  right: -260px;
+  width: 640px;
+  pointer-events: none;
+}
+
+.lion img {
+  width: 100%;
+  height: auto;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.065;
+}
+
+.content {
+  position: relative;
+  padding: 72px var(--grid-gutter) 32px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--color-offwhite);
+}
+
+.dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-red);
+}
+
+.base {
+  display: none;
+}
+
+.title {
+  margin-top: 22px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-cta-final-h2);
+  line-height: var(--lh-heading);
+  text-transform: uppercase;
+  color: var(--color-offwhite);
+}
+
+.titleLight {
+  font-weight: 400;
+}
+
+.body {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-secondary-muted);
+  text-wrap: pretty;
+}
+
+.micro {
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  color: var(--color-dark-muted);
+}
+
+.microDesktop {
+  display: none;
+}
+
+.microMobile {
+  position: relative;
+  padding: 14px var(--grid-gutter) 24px;
+  font-size: 10px;
+}
+
+.actions {
+  position: relative;
+  display: grid;
+  border-top: var(--hairline) solid var(--color-dark-border);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 var(--grid-gutter);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+/* Glifos ausentes no Plex Mono (→ ↗): monospace do sistema, como no export */
+.arrow {
+  font-family: monospace;
+  font-size: 18px;
+}
+
+.whatsapp {
+  height: 76px;
+  background: var(--color-offwhite);
+  color: var(--color-ink);
+}
+
+.whatsapp:hover {
+  background: var(--color-pure-white);
+  color: var(--color-ink);
+}
+
+.whatsapp .arrow {
+  color: var(--color-red);
+}
+
+.phone {
+  border-top: var(--hairline) solid var(--color-dark-border);
+  color: var(--color-offwhite);
+}
+
+.phone:hover {
+  background: var(--color-hover-dark);
+  color: var(--color-offwhite);
+}
+
+@media (min-width: 1024px) {
+  .lion {
+    top: -260px;
+    right: -380px;
+    width: 1500px;
+  }
+
+  .content {
+    padding: var(--space-cta-final-top) var(--grid-gutter) 0;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .base {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--color-dark-muted);
+  }
+
+  .mobileBreak {
+    display: none;
+  }
+
+  .title {
+    margin-top: 56px;
+    line-height: var(--lh-display);
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    margin-top: 48px;
+  }
+
+  .body {
+    grid-column: 1 / span 5;
+    margin-top: 0;
+    font-size: 17px;
+  }
+
+  .microDesktop {
+    display: block;
+    grid-column: 9 / span 4;
+    align-self: end;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .microMobile {
+    display: none;
+  }
+
+  .actions {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    margin-top: 88px;
+  }
+
+  .action,
+  .whatsapp {
+    height: 128px;
+    padding: 0 var(--grid-gutter);
+    font-size: 32px;
+  }
+
+  .arrow {
+    font-size: 28px;
+  }
+
+  .phone {
+    border-top: 0;
+    border-left: var(--hairline) solid var(--color-dark-border);
+  }
+}

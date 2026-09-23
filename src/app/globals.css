@@ -84,6 +84,11 @@ a:hover {
   outline-offset: 3px;
 }
 
+/* Destino de âncora focado por script (tabindex=-1): sem contorno, não é controle */
+[tabindex='-1']:focus {
+  outline: none;
+}
+
 /* Superfícies escuras (CTA urgência, CTA final): foco claro. */
 .surface-dark {
   --focus-color: var(--color-offwhite);

@@ -22,6 +22,7 @@
   --color-dark-border: #2e2e2e;
   --color-dark-muted: #999999; /* microcopy sobre #080808 (CTA urgência) */
   --color-pure-white: #ffffff; /* hover do botão claro */
+  --color-hover-dark: #141414; /* hover do "Ligar agora" no CTA final */
   --color-slot: #c9c8c2; /* bloco neutro da foto do Sobre (DEC-021) */
 
   /* Cores — signal (accent controlado) */

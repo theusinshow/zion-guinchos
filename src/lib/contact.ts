@@ -1,7 +1,7 @@
 import { business, type WhatsappMessageKey } from '@/config/business'
 
-// E.164: "+" seguido de 10–15 dígitos (DDI + número). Qualquer outro formato é tratado como pendente.
-const E164 = /^\+\d{10,15}$/
+// E.164: "+", primeiro dígito 1–9 e 10–15 dígitos no total. Qualquer outro formato é tratado como pendente.
+const E164 = /^\+[1-9]\d{9,14}$/
 
 function toE164Digits(value: string | null): string | null {
   if (!value || !E164.test(value)) return null

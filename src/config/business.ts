@@ -14,6 +14,7 @@ export const business = {
   phoneE164: null as string | null,
   phoneDisplay: null as string | null,
   whatsappE164: null as string | null,
+  whatsappDisplay: null as string | null,
 
   // TODO(P1): CNPJ só após confirmação de publicação.
   cnpj: null as string | null,

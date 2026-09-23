@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#E4E3DE; }
+  * { box-sizing:border-box; }
+  a { color:#080808; text-decoration:none; }
+  a:hover { color:#4A4A4A; }
+  ::selection { background:#080808; color:#F3F2ED; }
+</style>
+</helmet>
+
+<div style="padding:72px; display:flex; gap:96px; align-items:flex-start; width:max-content; font-family:'Archivo',Helvetica,Arial,sans-serif; color:#080808; -webkit-font-smoothing:antialiased;">
+  <div style="display:flex; flex-direction:column; gap:20px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; color:#6B6B6B;">DESKTOP 1440 · HERO APROVADA (2A) + SERVIÇOS · PASSE O MOUSE NA LISTA</div>
+    <div style="box-shadow:0 0 0 1px #C9C7BF; display:flex; flex-direction:column;">
+<div data-screen-label="Hero Desktop" style="width:1440px; height:920px; background:#F3F2ED; color:#080808; position:relative; overflow:hidden;">
+        <div style="position:absolute; inset:0; background:linear-gradient(120deg,#E4E3DE 0%,#CFCEC8 45%,#B7B6B0 72%,#C8C7C1 100%); color:#4A4A4A;">
+          <image-slot id="hero-desk" shape="rect" placeholder="Foto · caminhão plataforma cinza, 3/4, luz diurna difusa, fundo claro"></image-slot>
+        </div>
+        <div style="position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,#F3F2ED 0%,rgba(243,242,237,0.94) 30%,rgba(243,242,237,0.4) 60%,rgba(243,242,237,0) 78%);"></div>
+
+        <header style="position:absolute; left:0; right:0; top:0; height:88px; padding:0 64px; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:24px; align-items:center; border-bottom:1px solid #080808;">
+          <div style="grid-column:1 / span 2; position:relative; overflow:hidden; width:104px; aspect-ratio:640/420;"><img src="uploads/2.jpg" alt="Zion" style="position:absolute; width:168.75%; left:-31.25%; top:-119%; mix-blend-mode:multiply;"></div>
+          <nav style="grid-column:4 / span 5; display:flex; gap:40px;">
+            <a href="#" style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:17px; letter-spacing:0.08em; text-transform:uppercase; color:#080808;" style-hover="color:#4A4A4A">Serviços</a>
+            <a href="#" style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:17px; letter-spacing:0.08em; text-transform:uppercase; color:#080808;" style-hover="color:#4A4A4A">Área de atendimento</a>
+            <a href="#" style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:17px; letter-spacing:0.08em; text-transform:uppercase; color:#080808;" style-hover="color:#4A4A4A">Sobre</a>
+            <a href="#" style="font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:17px; letter-spacing:0.08em; text-transform:uppercase; color:#080808;" style-hover="color:#4A4A4A">Dúvidas</a>
+          </nav>
+          <div style="grid-column:9 / span 4; display:flex; justify-content:flex-end;">
+            <button type="button" style="display:inline-flex; align-items:center; gap:14px; background:#080808; color:#F7F7F5; border:none; border-radius:0; padding:0 24px; height:52px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:17px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer;" style-hover="background:#C93B3E">Solicitar guincho <span style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#C93B3E;">→</span></button>
+          </div>
+        </header>
+
+        <div style="position:absolute; left:64px; bottom:176px; width:1000px; display:flex; flex-direction:column;">
+          <div style="display:flex; align-items:center; gap:14px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em;"><span style="display:inline-flex; align-items:center; gap:8px; background:#080808; color:#F3F2ED; padding:7px 10px 7px 9px;"><span style="width:7px; height:7px; border-radius:50%; background:#C93B3E;"></span>24H</span>GUINCHO E AUTO SOCORRO 24H</div>
+          <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:108px; line-height:0.88; text-transform:uppercase; margin:30px 0 0;">Precisou de guincho?<br><span style="font-weight:400;">A Zion vai até você<span style="color:#C93B3E; font-weight:800;">.</span></span></h2>
+          <p style="font-size:18px; line-height:1.6; margin:28px 0 0; max-width:44ch; color:#080808; text-wrap:pretty;">Atendimento 24 horas em Palhoça, São José e Florianópolis para carros, motos e utilitários.</p>
+          <div style="display:flex; gap:12px; margin-top:32px;">
+            <button type="button" style="display:inline-flex; align-items:center; gap:14px; background:#080808; color:#F7F7F5; border:none; border-radius:0; padding:0 28px; height:60px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer;" style-hover="background:#C93B3E">Chamar no WhatsApp <span style="font-family:'IBM Plex Mono',monospace; font-size:15px; color:#C93B3E;">→</span></button>
+            <button type="button" style="display:inline-flex; align-items:center; background:transparent; color:#080808; border:1px solid #080808; border-radius:0; padding:0 26px; height:60px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer;" style-hover="background:#080808; color:#F3F2ED">Ligar agora</button>
+          </div>
+        </div>
+
+        <div style="position:absolute; left:0; right:0; bottom:0; height:112px; background:#F3F2ED; border-top:1px solid #080808; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:24px; padding:0 64px; align-items:stretch;">
+          <div style="grid-column:1 / span 2; position:relative; display:flex; align-items:center; gap:12px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:24px; text-transform:uppercase;"><span style="position:absolute; left:0; top:-1px; width:56px; height:3px; background:#C93B3E;"></span><span style="width:8px; height:8px; border-radius:50%; background:#C93B3E;"></span>24 horas</div>
+          <div style="grid-column:3 / span 2; display:flex; align-items:center; border-left:1px solid #D8D6CF; padding-left:24px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:24px; text-transform:uppercase;">Todos os dias</div>
+          <div style="grid-column:5 / span 4; display:flex; align-items:center; border-left:1px solid #D8D6CF; padding-left:24px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em;">PALHOÇA · SÃO JOSÉ · FLORIANÓPOLIS</div>
+          <div style="grid-column:9 / span 4; display:flex; align-items:center; border-left:1px solid #D8D6CF; padding-left:24px; font-size:14px; line-height:1.5; color:#4A4A4A;"><div><strong style="color:#080808; font-weight:600;">Está parado agora?</strong> Envie sua localização pelo WhatsApp para agilizar o atendimento.</div></div>
+        </div>
+      </div>
+
+<section data-screen-label="Servicos Desktop" style="width:1440px; background:#F3F2ED; padding:128px 64px 128px; border-top:1px solid #080808;">
+  <div style="display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:24px; align-items:end;">
+    <div style="grid-column:1 / span 12; display:flex; align-items:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; margin-bottom:36px;"><span style="color:#C93B3E;">01</span><span style="color:#6B6B6B;">/</span><span>SERVIÇOS</span></div>
+    <h2 style="grid-column:1 / span 8; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:74px; white-space:nowrap; line-height:0.9; text-transform:uppercase; margin:0;">O suporte que você precisa<br><span style="font-weight:400;">para seguir em frente.</span></h2>
+    <p style="grid-column:9 / span 4; font-size:18px; line-height:1.6; margin:0; padding-bottom:6px; color:#080808; text-wrap:pretty;">Atendimento para diferentes situações, desde uma emergência até o transporte agendado do seu veículo.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:24px; margin-top:88px; align-items:stretch;">
+    <div style="grid-column:1 / span 7; border-top:1px solid #080808; border-bottom:1px solid #080808;" onMouseLeave="{{ keepActive }}">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="9">
+        <a href="#" onMouseEnter="{{ s.activate }}" onFocus="{{ s.activate }}" style="display:grid; grid-template-columns:72px minmax(0,1.05fr) minmax(0,1fr) 40px; column-gap:24px; align-items:center; padding:0 20px 0 0; min-height:92px; border-top:{{ s.rule }}; background:{{ s.bg }}; color:#080808; text-decoration:none; transition:background 160ms ease;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.06em; padding-left:20px; color:{{ s.numColor }};">{{ s.n }}</span>
+          <span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:28px; line-height:1; text-transform:uppercase; letter-spacing:0.01em;">{{ s.title }}</span>
+          <span style="font-size:14.5px; line-height:1.5; color:#4A4A4A; text-wrap:pretty; padding:18px 0;">{{ s.desc }}</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:20px; line-height:1; justify-self:end; color:{{ s.arrowColor }};">↗</span>
+        </a>
+      </sc-for>
+    </div>
+
+    <div style="grid-column:8 / span 5; display:flex; flex-direction:column;">
+      <div style="position:relative; flex:1; min-height:600px; background:linear-gradient(160deg,#D9D8D2 0%,#C1C0BA 55%,#ABAAA4 100%); color:#4A4A4A; overflow:hidden;">
+        <sc-for list="{{ services }}" as="p" hint-placeholder-count="1">
+          <div style="position:absolute; inset:0; opacity:{{ p.op }}; pointer-events:{{ p.pe }}; transition:opacity 280ms ease;">
+            <image-slot id="svc-photo-{{ p.n }}" shape="rect" placeholder="{{ p.photo }}"></image-slot>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px; border-top:1px solid #080808; margin-top:0; padding-top:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em;">
+        <span style="color:#C93B3E;">{{ activeN }}</span><span style="color:#6B6B6B;">/ 09</span>
+        <span style="flex:1; height:1px; background:#D8D6CF; position:relative;"><span style="position:absolute; left:0; top:-1px; height:3px; width:{{ progress }}; background:#080808; transition:width 280ms ease;"></span></span>
+        <span>{{ activeTitle }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:20px;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em; color:#6B6B6B;">MOBILE 390 · SEM HOVER, TUDO VISÍVEL</div>
+    <div style="box-shadow:0 0 0 1px #C9C7BF; display:flex; flex-direction:column;">
+<div data-screen-label="Hero Mobile" style="width:390px; background:#F3F2ED; color:#080808; overflow:hidden; position:relative;">
+        <div style="position:relative; height:380px;">
+          <div style="position:absolute; inset:0; background:linear-gradient(140deg,#E4E3DE 0%,#CFCEC8 55%,#B9B8B2 100%); color:#4A4A4A;"><image-slot id="hero-mob" shape="rect" placeholder="Foto · caminhão cinza 3/4"></image-slot></div>
+          <div style="position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,rgba(243,242,237,0.75) 0%,rgba(243,242,237,0) 30%,rgba(243,242,237,0) 60%,#F3F2ED 100%);"></div>
+          <header style="position:absolute; left:0; right:0; top:0; height:64px; display:flex; align-items:stretch; border-bottom:1px solid #080808;">
+            <div style="flex:1; display:flex; align-items:center; padding-left:20px;"><div style="position:relative; overflow:hidden; width:72px; aspect-ratio:640/420;"><img src="uploads/2.jpg" alt="Zion" style="position:absolute; width:168.75%; left:-31.25%; top:-119%; mix-blend-mode:multiply;"></div></div>
+            <a href="#" style="width:84px; display:flex; align-items:center; justify-content:center; border-left:1px solid #080808; color:#080808; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:15px; letter-spacing:0.12em; text-transform:uppercase;">Ligar</a>
+            <button type="button" aria-label="Menu" style="width:64px; border:none; border-left:1px solid #080808; background:transparent; display:flex; flex-direction:column; gap:5px; align-items:center; justify-content:center; cursor:pointer; padding:0;"><span style="width:20px; height:1.5px; background:#080808;"></span><span style="width:20px; height:1.5px; background:#080808;"></span><span style="width:20px; height:1.5px; background:#080808;"></span></button>
+          </header>
+        </div>
+        <div style="position:relative; padding:0 20px 36px; margin-top:-96px; display:flex; flex-direction:column;">
+          <div style="display:flex; align-items:center; gap:9px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.18em;"><span style="width:6px; height:6px; border-radius:50%; background:#C93B3E;"></span>GUINCHO E AUTO SOCORRO 24H</div>
+          <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:56px; line-height:0.88; text-transform:uppercase; margin:20px 0 0;">Precisou de guincho?<br><span style="font-weight:400;">A Zion vai até você<span style="color:#C93B3E; font-weight:800;">.</span></span></h2>
+          <p style="font-size:16px; line-height:1.6; margin:20px 0 0; text-wrap:pretty;">Atendimento 24 horas em Palhoça, São José e Florianópolis para carros, motos e utilitários.</p>
+          <div style="display:grid; gap:10px; margin-top:26px;">
+            <button type="button" style="display:flex; align-items:center; justify-content:space-between; background:#080808; color:#F7F7F5; border:none; border-radius:0; padding:0 22px; height:60px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; box-shadow:inset 0 -3px 0 #C93B3E;">Chamar no WhatsApp <span style="font-family:'IBM Plex Mono',monospace; font-size:15px; color:#C93B3E;">→</span></button>
+            <button type="button" style="display:flex; align-items:center; background:transparent; color:#080808; border:1px solid #080808; border-radius:0; padding:0 22px; height:58px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:18px; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer;">Ligar agora</button>
+          </div>
+          <div style="font-size:14px; line-height:1.55; color:#4A4A4A; margin-top:18px;"><strong style="color:#080808; font-weight:600;">Está parado agora?</strong> Envie sua localização pelo WhatsApp para agilizar o atendimento.</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; border-top:1px solid #080808; margin-top:28px;">
+            <div style="position:relative; padding:14px 0; display:flex; align-items:center; gap:10px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; text-transform:uppercase;"><span style="position:absolute; left:0; top:-1px; width:40px; height:3px; background:#C93B3E;"></span><span style="width:7px; height:7px; border-radius:50%; background:#C93B3E;"></span>24 horas</div>
+            <div style="padding:14px 0 14px 16px; border-left:1px solid #D8D6CF; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:20px; text-transform:uppercase;">Todos os dias</div>
+            <div style="grid-column:1 / span 2; border-top:1px solid #D8D6CF; padding-top:12px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.12em;">PALHOÇA · SÃO JOSÉ · FLORIANÓPOLIS</div>
+          </div>
+        </div>
+      </div>
+
+<section data-screen-label="Servicos Mobile" style="width:390px; background:#F3F2ED; padding:88px 20px 96px; border-top:1px solid #080808;">
+  <div style="display:flex; align-items:center; gap:9px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.18em;"><span style="color:#C93B3E;">01</span><span style="color:#6B6B6B;">/</span><span>SERVIÇOS</span></div>
+  <h2 style="font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:46px; line-height:0.9; text-transform:uppercase; margin:22px 0 0;">O suporte que você precisa<br><span style="font-weight:400;">para seguir em frente.</span></h2>
+  <p style="font-size:16px; line-height:1.6; margin:20px 0 0; text-wrap:pretty;">Atendimento para diferentes situações, desde uma emergência até o transporte agendado do seu veículo.</p>
+  <div style="position:relative; aspect-ratio:4/3; margin-top:36px; background:linear-gradient(160deg,#D9D8D2 0%,#C1C0BA 55%,#ABAAA4 100%); color:#4A4A4A;"><image-slot id="svc-photo-mob" shape="rect" placeholder="Foto · caminhão plataforma com veículo embarcado"></image-slot></div>
+  <div style="margin-top:36px; border-top:1px solid #080808; border-bottom:1px solid #080808;">
+    <sc-for list="{{ services }}" as="m" hint-placeholder-count="9">
+      <a href="#" style="display:grid; grid-template-columns:40px minmax(0,1fr) 24px; column-gap:12px; padding:20px 0 22px; border-top:{{ m.ruleMob }}; color:#080808; text-decoration:none;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; padding-top:5px; color:#6B6B6B;">{{ m.n }}</span>
+        <span style="display:grid; gap:8px;"><span style="font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:24px; line-height:1; text-transform:uppercase;">{{ m.title }}</span><span style="font-size:15px; line-height:1.5; color:#4A4A4A;">{{ m.desc }}</span></span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:17px; padding-top:3px; justify-self:end; color:#080808;">↗</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: 0 };
+  data = [
+    ['01','Guincho 24h','Remoção e transporte de veículos em Palhoça, São José, Florianópolis e região.','Foto · caminhão plataforma cinza em rodovia, 3/4'],
+    ['02','Carros e utilitários','Atendimento para automóveis, caminhonetes e utilitários.','Foto · caminhonete embarcada na plataforma'],
+    ['03','Motos','Transporte de motocicletas com atendimento 24 horas.','Foto · moto fixada na plataforma, detalhe das cintas'],
+    ['04','Veículos rebaixados','Atendimento e transporte de veículos rebaixados.','Foto · rampa baixa, ângulo rasante no para-choque'],
+    ['05','Veículos acidentados','Remoção de veículos sem condições de continuar o trajeto.','Foto · cabo do guincho tensionado, veículo sendo içado'],
+    ['06','Pane mecânica ou elétrica','Atendimento quando uma falha impede que o veículo continue rodando.','Foto · veículo parado no acostamento, fim de tarde'],
+    ['07','Auxílio de bateria','Atendimento para problemas relacionados à bateria do veículo.','Foto · detalhe de cabos e equipamento de bateria'],
+    ['08','Transporte agendado','Transporte de veículos também pode ser solicitado antecipadamente.','Foto · caminhão com veículo preso, luz diurna'],
+    ['09','Transporte entre cidades','Atendimento para outros destinos e cidades sob consulta.','Foto · plataforma na estrada, plano aberto']
+  ];
+  renderVals() {
+    const a = this.state.active;
+    const services = this.data.map(([n,title,desc,photo], i) => {
+      const on = i === a;
+      return {
+        n, title, desc, photo,
+        activate: () => { if (this.state.active !== i) this.setState({ active: i }); },
+        bg: on ? '#E8E7E1' : 'transparent',
+        numColor: on ? '#C93B3E' : '#6B6B6B',
+        arrowColor: on ? '#C93B3E' : '#080808',
+        rule: i === 0 ? 'none' : '1px solid #D8D6CF',
+        ruleMob: i === 0 ? 'none' : '1px solid #D8D6CF',
+        op: on ? 1 : 0,
+        pe: on ? 'auto' : 'none'
+      };
+    });
+    return {
+      services,
+      keepActive: () => {},
+      activeN: this.data[a][0],
+      activeTitle: this.data[a][1].toUpperCase(),
+      progress: ((a + 1) / 9 * 100) + '%'
+    };
+  }
+}
+</script>
+</body>
+</html>

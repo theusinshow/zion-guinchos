@@ -1,0 +1,59 @@
+/*
+ * Botões de conversão — medidos no export v2 (Hero, Header, CTA urgência/final).
+ * Reutilizados em várias seções; variações de tamanho ficam no módulo da seção.
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.btn-primary {
+  justify-content: space-between;
+  padding: 0 28px;
+  background: var(--color-ink);
+  color: var(--color-white);
+  border: 0;
+}
+
+.btn-primary:hover {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn-outline {
+  padding: 0 26px;
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+}
+
+.btn-outline:hover {
+  background: var(--color-ink);
+  color: var(--color-offwhite);
+}
+
+/* O Plex Mono não tem "→" (U+2192): no export o glifo cai em monospace do sistema.
+   Declarado direto para não cair no fallback métrico do next/font (Arial a 134%). */
+.btn-arrow {
+  font-family: monospace;
+  font-size: 15px;
+  color: var(--color-red);
+}
+
+.btn[aria-disabled='true'] {
+  cursor: default;
+}

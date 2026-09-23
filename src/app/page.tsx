@@ -1,10 +1,13 @@
-// Fase 1: esqueleto das seções com o contrato de QA (data-section + âncoras).
-// Header e cada seção viram componentes próprios nas fases seguintes.
+import { Header } from '@/components/Header/Header'
+import { Hero } from '@/components/Hero/Hero'
+
+// Seções ainda vazias mantêm o contrato de QA (data-section + âncoras) até suas fases.
 export default function Home() {
   return (
     <>
+      <Header />
       <main>
-        <section data-section="hero" aria-label="Início" />
+        <Hero />
         <section data-section="servicos" id="servicos" aria-label="Serviços" />
         <section data-section="como-funciona" id="como-funciona" aria-label="Como funciona" />
         <section data-section="cta-urgencia" aria-label="Está parado agora?" />

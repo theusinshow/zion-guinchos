@@ -1,0 +1,196 @@
+/* Header — export v2 "Hero · Mobile" (64px) / "Hero · Desktop" (88px). Não é sticky. */
+
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  height: var(--header-height);
+  background: var(--color-offwhite);
+  border-bottom: var(--hairline) solid var(--color-ink);
+}
+
+.brand {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: var(--grid-gutter);
+}
+
+.logo {
+  display: block;
+  width: 72px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+.nav,
+.cta {
+  display: none;
+}
+
+.callLink {
+  width: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: var(--hairline) solid var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.menuToggle {
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: var(--hairline) solid var(--color-ink);
+}
+
+.menuIcon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 20px;
+}
+
+.menuIcon span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--color-ink);
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+.menuIcon[data-open='true'] span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.menuIcon[data-open='true'] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuIcon[data-open='true'] span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Menu aberto — DEC-019 */
+.menuPanel {
+  position: fixed;
+  top: var(--menu-top, var(--header-height));
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  overflow-y: auto;
+  background: var(--color-offwhite);
+}
+
+.menuPanel[hidden] {
+  display: none;
+}
+
+.menuList {
+  padding: 0 var(--grid-gutter);
+}
+
+.menuList li {
+  border-bottom: var(--hairline) solid var(--color-border-light);
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Contorno interno: o primeiro item encosta no header. */
+.menuLink:focus-visible {
+  outline-offset: -2px;
+}
+
+.menuActions {
+  display: grid;
+  gap: 10px;
+  padding: 24px var(--grid-gutter);
+}
+
+.menuButton {
+  display: flex;
+  width: 100%;
+  padding: 0 22px;
+}
+
+.menuButtonOutline {
+  height: 56px;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    align-items: center;
+    padding: 0 var(--grid-gutter);
+  }
+
+  .brand {
+    grid-column: 1 / span 2;
+    padding-left: 0;
+  }
+
+  .logo {
+    width: 104px;
+  }
+
+  .nav {
+    grid-column: 4 / span 5;
+    display: flex;
+    gap: 40px;
+  }
+
+  .navLink {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+  }
+
+  .cta {
+    grid-column: 9 / span 4;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .ctaButton {
+    height: 52px;
+    font-size: 17px;
+  }
+
+  .ctaButton :global(.btn-arrow) {
+    font-size: 14px;
+  }
+
+  .callLink,
+  .menuToggle,
+  .menuPanel {
+    display: none;
+  }
+}

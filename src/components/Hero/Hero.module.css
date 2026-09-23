@@ -1,0 +1,245 @@
+/* Hero — export v2 "Hero · Mobile" (foto 260px acima) / "Hero · Desktop" (720px + rail 96px). Sem fade/mask (DEC-008). */
+
+.hero {
+  background: var(--color-offwhite);
+}
+
+/* Mobile */
+.media {
+  position: relative;
+  height: var(--hero-image-height);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: 78% 60%;
+}
+
+.base {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 5px 8px;
+  background: var(--color-offwhite);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--color-ink);
+}
+
+.content {
+  padding: 32px var(--grid-gutter) 36px;
+  border-top: var(--hairline) solid var(--color-ink);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--color-ink);
+}
+
+.dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-red);
+}
+
+.title {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-hero-h1);
+  line-height: var(--lh-heading);
+  text-transform: uppercase;
+}
+
+.titleLight {
+  font-weight: 400;
+}
+
+.period {
+  font-weight: 800;
+  color: var(--color-red);
+}
+
+.body {
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  padding: 0 22px;
+}
+
+.buttonOutline {
+  height: 56px;
+}
+
+.micro {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.micro strong {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.rail {
+  display: grid;
+  gap: 6px;
+  padding: 14px var(--grid-gutter);
+  border-top: var(--hairline) solid var(--color-ink);
+}
+
+.railPrimary {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  text-transform: uppercase;
+}
+
+.railCities {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.railServices {
+  display: none;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .stage {
+    position: relative;
+    height: var(--hero-visual-height);
+  }
+
+  .media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: max(560px, 38.889%);
+    height: var(--hero-visual-height);
+  }
+
+  .image {
+    object-position: 88% 58%;
+  }
+
+  .base {
+    left: auto;
+    right: 24px;
+    bottom: 18px;
+    padding: 7px 10px;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+  }
+
+  .content {
+    position: relative;
+    width: calc(452px + var(--grid-gutter));
+    padding: 72px 0 0 var(--grid-gutter);
+    border-top: 0;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .title {
+    margin-top: 32px;
+    line-height: var(--lh-display);
+  }
+
+  .body {
+    margin-top: 28px;
+    font-size: 17.5px;
+  }
+
+  .actions {
+    display: flex;
+    margin-top: 32px;
+  }
+
+  .button {
+    display: inline-flex;
+    width: auto;
+    padding: 0 28px;
+  }
+
+  .buttonOutline {
+    height: 60px;
+    padding: 0 26px;
+  }
+
+  .micro {
+    max-width: 40ch;
+    margin-top: 18px;
+    font-size: 13.5px;
+  }
+
+  .rail {
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    gap: 0 var(--grid-gap);
+    height: var(--hero-rail-height);
+    padding: 0 var(--grid-gutter);
+  }
+
+  .rail li {
+    display: flex;
+    align-items: center;
+  }
+
+  .railPrimary {
+    grid-column: 1 / span 3;
+    font-size: 24px;
+  }
+
+  .railCities {
+    grid-column: 4 / span 5;
+    padding-left: 24px;
+    border-left: var(--hairline) solid var(--color-border-light);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: normal;
+  }
+
+  .railServices {
+    grid-column: 9 / span 4;
+    padding-left: 24px;
+    border-left: var(--hairline) solid var(--color-border-light);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--color-muted);
+  }
+}

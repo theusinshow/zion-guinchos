@@ -77,6 +77,16 @@
   --space-duvidas: 80px var(--gutter-end) 88px var(--grid-gutter);
 }
 
+/*
+ * Adendo DEC-025 — primeira dobra em tablet (768–1279): a foto da Hero cede altura para o H1 inteiro
+ * caber na dobra (e o topo do CTA aparecer em 1024×768). Piso 260px; 390 e ≥1280 não mudam.
+ */
+@media (min-width: 768px) and (max-width: 1279px) {
+  :root {
+    --hero-image-height: max(260px, min(66.667vw, 560px, 36svh));
+  }
+}
+
 @media (min-width: 1280px) {
   :root {
     /* Grid — desktop (1440): 12 col, padding 64, gap 24 */

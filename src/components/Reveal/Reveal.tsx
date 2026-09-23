@@ -29,7 +29,23 @@ export function Reveal() {
       { rootMargin: '0px 0px -8% 0px' },
     )
     targets.filter((el) => !('revealed' in el.dataset)).forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
+
+    // Controle focado nunca fica invisível: revela o bloco na hora, sem transição.
+    const onFocusIn = (event: FocusEvent) => {
+      const block = (event.target as Element | null)?.closest<HTMLElement>('[data-reveal]:not([data-revealed])')
+      if (!block) return
+      block.style.transition = 'none'
+      block.dataset.revealed = ''
+      observer.unobserve(block)
+      void block.offsetWidth // aplica o estado final antes de restaurar a transição
+      block.style.transition = ''
+    }
+    document.addEventListener('focusin', onFocusIn)
+
+    return () => {
+      observer.disconnect()
+      document.removeEventListener('focusin', onFocusIn)
+    }
   }, [])
 
   return null

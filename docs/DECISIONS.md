@@ -154,6 +154,16 @@ Não adicionar cards, gradients, glass, glow, pills ou decoração automática f
 
 **Decisão:** a referência final não contém barra fixa de ações no mobile; o header mobile já tem "LIGAR". Não implementar `MobileActionBar`.
 
+## DEC-024 — CTAs com contato pendente
+
+**Status:** aprovado (Tech Lead, revisão da Fase 2).
+
+**Contexto:** telefone e WhatsApp são P0 pendentes. Um `<a>` sem `href` com aparência de CTA ativo é enganoso para tecnologia assistiva.
+
+**Decisão:** enquanto o dado for `null`, o CTA mantém o visual aprovado, com `aria-disabled="true"`, `data-pending` e texto acessível "(contato pendente)". Não usar destino fictício. O build de release (`ZION_RELEASE=1`) falha se telefone ou WhatsApp estiverem nulos, garantindo que a página nunca vá para mídia paga com CTAs inertes.
+
+**Impacto:** desenvolvimento e QA visual seguem possíveis; publicação fica tecnicamente bloqueada até o P0.
+
 ## Como adicionar decisões
 
 Para novas decisões relevantes, criar entradas `DEC-018`, `DEC-019` etc. com:

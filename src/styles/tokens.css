@@ -29,6 +29,9 @@
   --font-body: var(--font-archivo), "Archivo", Helvetica, Arial, sans-serif;
   --font-mono: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
 
+  /* Foco — escuro por padrão; .surface-dark troca para claro */
+  --focus-color: var(--color-ink);
+
   /* Hairline */
   --hairline: 1px;
 

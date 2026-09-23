@@ -16,7 +16,14 @@ type Gtag = (command: 'event', eventName: string, params: Record<string, unknown
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? ''
 const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? ''
-const ADS_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL ?? ''
+
+// Conversão do Ads somente para eventos mapeados explicitamente, com label próprio.
+// Evento sem label configurado não dispara conversão.
+const ADS_CONVERSION_LABELS: Record<TrackEvent, string> = {
+  whatsapp_click: process.env.NEXT_PUBLIC_GOOGLE_ADS_LABEL_WHATSAPP ?? '',
+  phone_click: process.env.NEXT_PUBLIC_GOOGLE_ADS_LABEL_PHONE ?? '',
+  location_cta_click: process.env.NEXT_PUBLIC_GOOGLE_ADS_LABEL_LOCATION ?? '',
+}
 
 export const analyticsEnabled = Boolean(GA_ID || ADS_ID)
 
@@ -46,7 +53,8 @@ export function track(event: TrackEvent, { placement }: TrackParams): void {
   const positional = placementEventName(event, placement)
   if (positional) gtag('event', positional, params)
 
-  if (ADS_ID && ADS_LABEL) {
-    gtag('event', 'conversion', { send_to: `${ADS_ID}/${ADS_LABEL}` })
+  const label = ADS_CONVERSION_LABELS[event]
+  if (ADS_ID && label) {
+    gtag('event', 'conversion', { send_to: `${ADS_ID}/${label}` })
   }
 }

@@ -25,7 +25,6 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: clip;
 }
 
 h1,
@@ -81,8 +80,13 @@ a:hover {
 
 /* Foco visível: contorno de alto contraste, sem depender só do vermelho */
 :focus-visible {
-  outline: 2px solid var(--color-ink);
+  outline: 2px solid var(--focus-color);
   outline-offset: 3px;
+}
+
+/* Superfícies escuras (CTA urgência, CTA final): foco claro. */
+.surface-dark {
+  --focus-color: var(--color-offwhite);
 }
 
 /* Grid editorial — 12 colunas no desktop (padding 64, gap 24) */

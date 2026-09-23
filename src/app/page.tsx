@@ -1,5 +1,7 @@
 import { Header } from '@/components/Header/Header'
 import { Hero } from '@/components/Hero/Hero'
+import { HowItWorks } from '@/components/HowItWorks/HowItWorks'
+import { Services } from '@/components/Services/Services'
 
 // Seções ainda vazias mantêm o contrato de QA (data-section + âncoras) até suas fases.
 export default function Home() {
@@ -8,8 +10,8 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <section data-section="servicos" id="servicos" aria-label="Serviços" />
-        <section data-section="como-funciona" id="como-funciona" aria-label="Como funciona" />
+        <Services />
+        <HowItWorks />
         <section data-section="cta-urgencia" aria-label="Está parado agora?" />
         <section data-section="area-de-atendimento" id="area-de-atendimento" aria-label="Área de atendimento" />
         <section data-section="sobre" id="sobre" aria-label="Sobre" />

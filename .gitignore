@@ -7,3 +7,4 @@ next-env.d.ts
 .vercel
 /qa/tmp/
 /qa/out/
+.maestri/

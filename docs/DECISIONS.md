@@ -166,6 +166,26 @@ Não adicionar cards, gradients, glass, glow, pills ou decoração automática f
 
 **Impacto:** desenvolvimento e QA visual seguem possíveis; publicação fica tecnicamente bloqueada até o P0.
 
+## DEC-025 — Estratégia responsiva
+
+**Status:** aprovado (Tech Lead, Fases 6+7). Motivado por rev2-3, rev3-1, rev3-3, rev4-1.
+
+**Decisão:**
+- Composição desktop a partir de **1280px** (menor largura sem colisão de H2×CTA, quebra de nav ou rail, e com a plataforma do caminhão visível). Abaixo de 1280 usa a composição mobile aprovada; nenhuma composição nova foi criada.
+- < 1280: gutter fluido `clamp(20px, 0.72px + 4.944vw, 64px)` e coluna de leitura de no máximo 720px alinhada à esquerda; fundos, hairlines, foto da Hero, slot do Sobre e barras do CTA final seguem full-bleed. Hero `clamp(260px, 66.667vw, 560px)`; slot do Sobre `min(125vw, 760px)`.
+- 1280–1439: H2 de linha única (Como funciona, Sobre) escalam só nessa faixa, exatos em 1440; "Também atendemos" com label col 1–2 e lista col 3–12, sem quebra.
+- > 1440: grid de 1312px centralizado (`--grid-gutter = max(64px, (100cqw − 1312px)/2)`); foto da Hero começa em gutter + 496px e sangra até a borda direita; leão e metades do CTA final acompanham o grid.
+- < 360px: `.btn` com padding 16px e tracking .08em; footer em `auto-fit minmax(150px, 1fr)`.
+- Área: DOM na ordem visual mobile; desktop posiciona por grid explícito (sem `order`/`display: contents`).
+
+**Impacto:** 390 e 1440 continuam idênticos à referência; 320–1920 sem overflow nem colisão.
+
+## DEC-026 — Motion
+
+**Status:** aprovado (Tech Lead, Fase 7).
+
+**Decisão:** reveal (opacity + translateY 12px, 500ms ease-out, sem stagger) em blocos abaixo da dobra, via um único IntersectionObserver; nada na Hero/Header. Estado oculto só com `html.reveal-ready` (JS) e `prefers-reduced-motion: no-preference`. Hovers: seta ±4–6px, sublinhado nos links de nav.
+
 ## Como adicionar decisões
 
 Para novas decisões relevantes, criar entradas `DEC-018`, `DEC-019` etc. com:

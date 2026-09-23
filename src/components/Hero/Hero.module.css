@@ -29,7 +29,7 @@
 }
 
 .content {
-  padding: 32px var(--grid-gutter) 36px;
+  padding: 32px var(--gutter-end) 36px var(--grid-gutter);
   border-top: var(--hairline) solid var(--color-ink);
 }
 
@@ -131,7 +131,7 @@
 }
 
 /* Desktop */
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .stage {
     position: relative;
     height: var(--hero-visual-height);
@@ -141,7 +141,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    left: max(560px, 38.889%);
+    left: calc(var(--grid-gutter) + 496px); /* x=560 em 1440; sangra até a borda direita */
     height: var(--hero-visual-height);
   }
 

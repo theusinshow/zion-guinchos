@@ -12,7 +12,7 @@ export function FinalCTA() {
         <img src="/brand/zion-lion.webp" alt="" width={1080} height={1350} loading="lazy" decoding="async" />
       </div>
 
-      <div className={styles.content}>
+      <div className={styles.content} data-reveal>
         <div className={styles.meta}>
           <p className={styles.eyebrow}>
             <span className={styles.dot} aria-hidden="true" />

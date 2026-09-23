@@ -2,7 +2,7 @@
  * Tokens — Zion Guincho
  * Fonte: docs/DESIGN.md §3 (paleta), §5–6 (grid), §7 (escala), §8 (ritmo).
  * Valores medidos em docs/reference/Zion Landing Page v2.dc.html.
- * Breakpoint desktop: 1024px (mobile < 1024 ≤ desktop).
+ * Breakpoints: composição mobile < 1280 ≤ composição desktop; acima de 1440 o grid de 1312px centraliza.
  */
 
 :root {
@@ -55,29 +55,41 @@
   --lh-heading: 0.9;
   --lh-display: 0.86;
 
-  /* Grid — mobile (390): padding lateral 20; layout reorganizado por seção */
-  --grid-gutter: 20px;
+  /*
+   * Grid — composição mobile (< 1280): gutter fluido 20 (390px) → 64 (1280px).
+   * --gutter-end limita a coluna de leitura a 720px (alinhada à esquerda) em telas médias;
+   * usa % e por isso deve ser usado em padding de blocos full-width.
+   */
+  --grid-gutter: clamp(20px, calc(0.72px + 4.9438vw), 64px);
+  --reading-width: 720px;
+  --gutter-end: max(var(--grid-gutter), calc(100% - var(--reading-width) - var(--grid-gutter)));
 
   /* Header */
   --header-height: 64px;
 
   /* Ritmo vertical — mobile (DESIGN.md §8) */
-  --hero-image-height: 260px;
-  --space-servicos: 72px var(--grid-gutter) 56px;
-  --space-como-funciona: 72px var(--grid-gutter) 64px;
-  --space-cta-urgencia: 36px var(--grid-gutter) 32px;
-  --space-area: 64px var(--grid-gutter) 56px;
-  --space-duvidas: 80px var(--grid-gutter) 88px;
+  --hero-image-height: clamp(260px, 66.667vw, 560px); /* 390×260 no mobile; cresce sem virar faixa */
+  --about-visual-height: min(125vw, 760px); /* proporção 4/5 do slot mobile, teto = altura desktop */
+  --space-servicos: 72px var(--gutter-end) 56px var(--grid-gutter);
+  --space-como-funciona: 72px var(--gutter-end) 64px var(--grid-gutter);
+  --space-cta-urgencia: 36px var(--gutter-end) 32px var(--grid-gutter);
+  --space-area: 64px var(--gutter-end) 56px var(--grid-gutter);
+  --space-duvidas: 80px var(--gutter-end) 88px var(--grid-gutter);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   :root {
     /* Grid — desktop (1440): 12 col, padding 64, gap 24 */
     --grid-columns: 12;
     --grid-gutter: 64px;
+    --gutter-end: var(--grid-gutter);
     --grid-gap: 24px;
 
     --header-height: 88px;
+
+    /* 1280→1440: H2 de linha única da referência escalam para não quebrar (valor exato em 1440) */
+    --fs-como-funciona-h2: clamp(64px, 5vw, 72px);
+    --fs-sobre-h2: clamp(63px, calc(5.625vw - 9px), 72px);
 
     /* Ritmo vertical — desktop (DESIGN.md §8) */
     --hero-visual-height: 720px;
@@ -88,5 +100,20 @@
     --space-area: 96px var(--grid-gutter) 88px;
     --space-duvidas: 144px var(--grid-gutter) 160px;
     --space-cta-final-top: 128px;
+  }
+}
+
+/*
+ * > 1440: o grid de 1312px (1440 − 2×64) centraliza; fundos, hairlines e a foto da Hero seguem full-bleed.
+ * cqw = largura do body sem a barra de rolagem. Só nesta faixa (sem menu fixo, que exigiria outro containing block).
+ */
+@media (min-width: 1441px) {
+  body {
+    container-type: inline-size;
+  }
+
+  :root,
+  body {
+    --grid-gutter: max(64px, calc((100cqw - 1312px) / 2));
   }
 }

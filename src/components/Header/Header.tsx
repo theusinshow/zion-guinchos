@@ -23,7 +23,7 @@ export function Header() {
 
       <nav className={styles.nav} aria-label="Principal">
         {NAV_LINKS.map((link) => (
-          <a key={link.href} href={link.href} className={styles.navLink}>
+          <a key={link.href} href={link.href} className={`nav-link ${styles.navLink}`}>
             {link.label}
           </a>
         ))}

@@ -146,7 +146,7 @@
   height: 56px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .section {
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));

@@ -75,7 +75,7 @@ export function Services() {
   return (
     <section data-section="servicos" id="servicos" className={styles.services} aria-labelledby="servicos-title">
       <div className={styles.top}>
-        <div className={styles.intro}>
+        <div className={styles.intro} data-reveal>
           <h2 id="servicos-title" className={styles.title}>
             O suporte que
             <br />
@@ -92,7 +92,7 @@ export function Services() {
           </p>
         </div>
 
-        <ol className={styles.list}>
+        <ol className={styles.list} data-reveal>
           {SERVICES.map((service, index) => (
             <li key={service.title} className={styles.item}>
               <span className={styles.number} aria-hidden="true">
@@ -119,7 +119,7 @@ export function Services() {
         </ol>
       </div>
 
-      <div className={styles.also}>
+      <div className={styles.also} data-reveal>
         <h3 className={styles.alsoLabel}>TAMBÉM ATENDEMOS</h3>
         <ul className={styles.alsoList}>
           {ALSO.map((item) => (

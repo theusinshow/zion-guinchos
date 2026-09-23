@@ -51,7 +51,7 @@ export function Footer() {
             <ul>
               {NAV.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className={styles.navLink}>
+                  <a href={link.href} className={`nav-link ${styles.navLink}`}>
                     {link.label}
                   </a>
                 </li>

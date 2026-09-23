@@ -7,14 +7,7 @@
   border-top: var(--hairline) solid var(--color-ink);
 }
 
-/* Mobile: colunas do desktop se dissolvem para reordenar os blocos como na baseline */
-.left,
-.right {
-  display: contents;
-}
-
 .title {
-  order: 1;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: var(--fs-area-h2);
@@ -27,7 +20,6 @@
 }
 
 .lead {
-  order: 2;
   margin-top: 16px;
   font-size: 15.5px;
   line-height: 1.6;
@@ -40,10 +32,9 @@
 }
 
 .mapMobile {
-  order: 3;
   display: block;
   width: 100%;
-  max-width: 350px;
+  max-width: 560px;
   height: auto;
   margin-top: 24px;
 }
@@ -83,7 +74,6 @@
 }
 
 .legend {
-  order: 4;
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
@@ -129,7 +119,6 @@
 }
 
 .mini {
-  order: 5;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -179,7 +168,6 @@
 }
 
 .other {
-  order: 6;
   display: grid;
   gap: 12px;
   margin-top: 24px;
@@ -206,31 +194,52 @@
   padding: 0 22px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .section {
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    grid-template-rows: auto auto auto 1fr auto;
     column-gap: var(--grid-gap);
-    align-items: stretch;
+    align-items: start;
   }
 
-  .left {
+  /* Coluna esquerda: título, lead, mini-mapa e "Outras cidades" (alinhado ao fim da legenda).
+     Coluna direita: mapa (linhas 1–4) e legenda (linha 5). */
+
+  .title,
+  .lead,
+  .mini,
+  .other {
     grid-column: 1 / span 4;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
   }
 
-  .right {
-    grid-column: 6 / span 7;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  .title {
+    grid-row: 1;
   }
 
   .lead {
-    margin-top: 0;
+    grid-row: 2;
+    margin-top: 24px;
     font-size: 16.5px;
+  }
+
+  .mini {
+    grid-row: 3;
+  }
+
+  .other {
+    grid-row: 4 / 6;
+    align-self: end;
+  }
+
+  .mapDesktop {
+    grid-column: 6 / span 7;
+    grid-row: 1 / 5;
+  }
+
+  .legend {
+    grid-column: 6 / span 7;
+    grid-row: 5;
   }
 
   .mapMobile {
@@ -245,7 +254,7 @@
   }
 
   .legend {
-    margin-top: 0;
+    margin-top: 16px;
     padding-top: 14px;
     font-size: 10.5px;
   }
@@ -258,7 +267,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    margin-top: 12px;
+    margin-top: 36px;
   }
 
   .miniMobile {
@@ -289,7 +298,7 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    margin-top: auto;
+    margin-top: 24px;
     padding-top: 18px;
   }
 

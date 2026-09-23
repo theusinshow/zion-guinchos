@@ -25,7 +25,7 @@
 
 .content {
   position: relative;
-  padding: 72px var(--grid-gutter) 32px;
+  padding: 72px var(--gutter-end) 32px var(--grid-gutter);
 }
 
 .eyebrow {
@@ -84,7 +84,7 @@
 
 .microMobile {
   position: relative;
-  padding: 14px var(--grid-gutter) 24px;
+  padding: 14px var(--gutter-end) 24px var(--grid-gutter);
   font-size: 10px;
 }
 
@@ -111,8 +111,20 @@
 
 /* Glifos ausentes no Plex Mono (→ ↗): monospace do sistema, como no export */
 .arrow {
+  display: inline-block;
   font-family: monospace;
   font-size: 18px;
+  transition: transform 160ms ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .whatsapp:hover .arrow {
+    transform: translateX(6px);
+  }
+
+  .phone:hover .arrow {
+    transform: translate(4px, -4px);
+  }
 }
 
 .whatsapp {
@@ -140,10 +152,10 @@
   color: var(--color-offwhite);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .lion {
     top: -260px;
-    right: -380px;
+    right: calc(var(--grid-gutter) - 444px); /* −380px em 1440; acompanha o grid centralizado */
     width: 1500px;
   }
 
@@ -213,11 +225,19 @@
     margin-top: 88px;
   }
 
+  /* Metades full-bleed: gutter só na borda externa, 64px junto à divisão central (idêntico em 1440) */
   .action,
   .whatsapp {
     height: 128px;
-    padding: 0 var(--grid-gutter);
     font-size: 32px;
+  }
+
+  .whatsapp {
+    padding: 0 64px 0 var(--grid-gutter);
+  }
+
+  .phone {
+    padding: 0 var(--grid-gutter) 0 64px;
   }
 
   .arrow {

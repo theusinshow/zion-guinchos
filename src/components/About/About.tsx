@@ -18,7 +18,7 @@ export function About() {
       </div>
 
       <div className={styles.content}>
-        <div className={styles.heading}>
+        <div className={styles.heading} data-reveal>
           <h2 id="sobre-title" className={styles.title}>
             Atendimento direto.
             <br />
@@ -30,7 +30,7 @@ export function About() {
           </h2>
         </div>
 
-        <div className={styles.text}>
+        <div className={styles.text} data-reveal>
           <p className={styles.lead}>
             A Zion é uma nova operação de guincho e auto socorro em Palhoça, conduzida por um profissional com experiência no
             segmento.
@@ -40,7 +40,7 @@ export function About() {
           </p>
         </div>
 
-        <dl className={styles.facts}>
+        <dl className={styles.facts} data-reveal>
           {FACTS.map((fact) => (
             <div key={fact.label} className={styles.fact}>
               <dt className={styles.factLabel}>{fact.label}</dt>

@@ -99,7 +99,7 @@ a:hover {
   padding-inline: var(--grid-gutter);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .grid {
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
@@ -132,4 +132,34 @@ a:hover {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/*
+ * Motion (DESIGN.md §18, DEC-016). Reveal: fade + 12px, 500ms, só com JS (html.reveal-ready)
+ * e sem preferência por movimento reduzido. Nada na Hero.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready [data-reveal]:not([data-revealed]) {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .reveal-ready [data-reveal] {
+    transition:
+      opacity 500ms ease-out,
+      transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+}
+
+/* Links de navegação: sublinhado no hover */
+.nav-link {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  transition: text-decoration-color 160ms ease;
+}
+
+.nav-link:hover {
+  text-decoration-color: currentColor;
 }

@@ -8,7 +8,7 @@
 .main {
   display: grid;
   gap: 28px;
-  padding: 36px var(--grid-gutter) 28px;
+  padding: 36px var(--gutter-end) 28px var(--grid-gutter);
 }
 
 .brand {
@@ -48,7 +48,8 @@
 
 .columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* 2 colunas de 165px em 390 (referência); 1 coluna em telas < 340px para não quebrar os links */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 }
 
@@ -94,9 +95,17 @@
 
 /* Glifo ausente no Plex Mono: monospace do sistema, como no export */
 .contactArrow {
+  display: inline-block;
   font-family: monospace;
   font-size: 13px;
   color: var(--color-red);
+  transition: transform 160ms ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .contactLink:hover .contactArrow {
+    transform: translateX(3px);
+  }
 }
 
 .contactNumber {
@@ -149,7 +158,7 @@
   color: var(--color-ink);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .main {
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
     gap: 0 var(--grid-gap);

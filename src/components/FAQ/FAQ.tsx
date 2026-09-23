@@ -32,7 +32,7 @@ const ITEMS = [
 export function FAQ() {
   return (
     <section data-section="duvidas" id="duvidas" className={styles.section} aria-labelledby="duvidas-title">
-      <div className={styles.column}>
+      <div className={styles.column} data-reveal>
         <h2 id="duvidas-title" className={styles.title}>
           Antes de chamar,
           <br />

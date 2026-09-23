@@ -13,7 +13,7 @@ export function Hero() {
             alt=""
             fill
             preload
-            sizes="(min-width: 1024px) calc(100vw - max(560px, 38.889vw)), 100vw"
+            sizes="(min-width: 1441px) calc(50vw + 160px), (min-width: 1280px) calc(100vw - 560px), 100vw"
             className={styles.image}
           />
           <span className={styles.base}>BASE · PALHOÇA / SC</span>

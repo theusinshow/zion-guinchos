@@ -75,7 +75,7 @@ export function MobileMenu({ children }: { children: React.ReactNode }) {
       }
     }
     const onResize = () => {
-      if (!window.matchMedia('(min-width: 1024px)').matches) return
+      if (!window.matchMedia('(min-width: 1280px)').matches) return
       const hadFocus = panelRef.current?.contains(document.activeElement) || document.activeElement === buttonRef.current
       close(false)
       // O botão e o painel somem no desktop: foco vai para o controle visível equivalente (nav principal).

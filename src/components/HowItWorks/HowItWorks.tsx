@@ -10,12 +10,12 @@ const STEPS = [
 export function HowItWorks() {
   return (
     <section data-section="como-funciona" id="como-funciona" className={styles.section} aria-labelledby="como-funciona-title">
-      <h2 id="como-funciona-title" className={styles.title}>
+      <h2 id="como-funciona-title" className={styles.title} data-reveal>
         Pedir um guincho <br className={styles.mobileBreak} />
         <span className={styles.titleLight}>pode ser simples.</span>
       </h2>
 
-      <div className={styles.flow}>
+      <div className={styles.flow} data-reveal>
         {/* Trajeto desktop: SVG do export v2 (1312×88). No mobile, o trajeto 28×420 do export é
             desenhado por etapa (marcador + linha que acompanha a altura + diagonal), para crescer com o texto. */}
         <svg className={styles.pathDesktop} viewBox="0 0 1312 88" aria-hidden="true">
@@ -48,7 +48,7 @@ export function HowItWorks() {
         </ol>
       </div>
 
-      <div className={styles.actions}>
+      <div className={styles.actions} data-reveal>
         <ContactLink channel="whatsapp" placement="como_funciona" className={`btn btn-primary ${styles.button}`}>
           Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true">→</span>
         </ContactLink>

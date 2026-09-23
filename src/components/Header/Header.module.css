@@ -144,7 +144,7 @@
   height: 56px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .header {
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));

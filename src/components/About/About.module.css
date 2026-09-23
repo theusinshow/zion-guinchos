@@ -7,7 +7,7 @@
 
 .visual {
   position: relative;
-  aspect-ratio: 4 / 5;
+  height: var(--about-visual-height);
   background: var(--color-slot);
   overflow: hidden;
 }
@@ -19,7 +19,7 @@
 .heading {
   position: relative;
   margin-top: -72px;
-  padding: 28px var(--grid-gutter) 0;
+  padding: 28px var(--gutter-end) 0 var(--grid-gutter);
   background: var(--color-offwhite);
 }
 
@@ -38,7 +38,7 @@
 .text {
   display: grid;
   gap: 12px;
-  padding: 18px var(--grid-gutter) 0;
+  padding: 18px var(--gutter-end) 0 var(--grid-gutter);
 }
 
 .lead,
@@ -57,7 +57,7 @@
 }
 
 .facts {
-  margin: 28px var(--grid-gutter) 0;
+  margin: 28px var(--gutter-end) 0 var(--grid-gutter);
   border-top: var(--hairline) solid var(--color-ink);
 }
 
@@ -87,20 +87,19 @@
 }
 
 .note {
-  padding: 8px var(--grid-gutter) 0;
+  padding: 8px var(--gutter-end) 0 var(--grid-gutter);
   font-family: var(--font-mono);
   font-size: 10.5px;
   line-height: 1.6;
   color: var(--color-muted);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .section {
     padding-bottom: 112px;
   }
 
   .visual {
-    aspect-ratio: auto;
     height: 760px;
   }
 

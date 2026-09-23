@@ -4,7 +4,7 @@ import styles from './UrgentCTA.module.css'
 export function UrgentCTA() {
   return (
     <section data-section="cta-urgencia" className={`surface-dark ${styles.section}`} aria-labelledby="cta-urgencia-title">
-      <div className={styles.message}>
+      <div className={styles.message} data-reveal>
         <div className={styles.heading}>
           <span className={styles.dot} aria-hidden="true" />
           <h2 id="cta-urgencia-title" className={styles.title}>
@@ -14,7 +14,7 @@ export function UrgentCTA() {
         <p className={styles.body}>Envie sua localização pelo WhatsApp e informe o veículo para agilizar o atendimento.</p>
       </div>
 
-      <div className={styles.side}>
+      <div className={styles.side} data-reveal>
         <div className={styles.actions}>
           <ContactLink
             channel="whatsapp"

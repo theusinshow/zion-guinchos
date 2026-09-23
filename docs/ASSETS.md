@@ -2,6 +2,8 @@
 
 ## 1. Estado atual
 
+Originais do logo fornecidos pelo cliente: `docs/assets/logo-original/`. Versões usadas no site: `public/brand/`. Favicon: `src/app/icon.png`, `apple-icon.png`, `favicon.ico` (recorte do símbolo raster; trocar pelo SVG oficial).
+
 O export do design contém os seguintes assets de referência:
 
 ### Logo / símbolo

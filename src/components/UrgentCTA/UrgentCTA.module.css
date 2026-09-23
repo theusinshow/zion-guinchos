@@ -1,0 +1,140 @@
+/* CTA urgência — export v2 "CTA urgência · Mobile" / "Desktop". Faixa dark curta (DEC-011). */
+
+.section {
+  padding: var(--space-cta-urgencia);
+  background: var(--color-ink);
+  color: var(--color-offwhite);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-red);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-cta-urgencia-h2);
+  line-height: var(--lh-heading);
+  text-transform: uppercase;
+  color: var(--color-offwhite);
+}
+
+.body {
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--color-secondary-muted);
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  padding: 0 22px;
+}
+
+.location {
+  font-size: 17px;
+}
+
+.location :global(.btn-arrow) {
+  font-size: 14px;
+}
+
+.phone {
+  height: 56px;
+}
+
+.micro {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--color-dark-muted);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    align-items: center;
+  }
+
+  .message {
+    grid-column: 1 / span 6;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .heading {
+    gap: 18px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .body {
+    margin-top: 0;
+    padding-left: 28px;
+    font-size: 15px;
+  }
+
+  .side {
+    grid-column: 7 / span 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .actions {
+    display: flex;
+    margin-top: 0;
+  }
+
+  .button {
+    display: inline-flex;
+    width: auto;
+    height: 64px;
+    padding: 0 28px;
+  }
+
+  .location {
+    font-size: 18px;
+  }
+
+  .location :global(.btn-arrow) {
+    font-size: 15px;
+  }
+
+  .phone {
+    height: 64px;
+    padding: 0 26px;
+  }
+
+  .micro {
+    margin-top: 0;
+    font-size: 10.5px;
+    line-height: normal;
+    letter-spacing: 0.08em;
+  }
+}

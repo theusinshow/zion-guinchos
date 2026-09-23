@@ -46,6 +46,32 @@
   color: var(--color-offwhite);
 }
 
+/* Variantes para superfícies escuras (CTA urgência / CTA final) */
+.btn-light {
+  justify-content: space-between;
+  padding: 0 28px;
+  background: var(--color-offwhite);
+  color: var(--color-ink);
+  border: 0;
+}
+
+.btn-light:hover {
+  background: var(--color-pure-white);
+  color: var(--color-ink);
+}
+
+.btn-outline-light {
+  padding: 0 26px;
+  background: transparent;
+  color: var(--color-offwhite);
+  border: 1px solid var(--color-offwhite);
+}
+
+.btn-outline-light:hover {
+  background: var(--color-offwhite);
+  color: var(--color-ink);
+}
+
 /* O Plex Mono não tem "→" (U+2192): no export o glifo cai em monospace do sistema.
    Declarado direto para não cair no fallback métrico do next/font (Arial a 134%). */
 .btn-arrow {

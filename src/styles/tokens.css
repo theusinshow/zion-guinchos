@@ -20,6 +20,9 @@
   --color-surface-gray: #e4e3dd;
   --color-mid-gray: #9a9993;
   --color-dark-border: #2e2e2e;
+  --color-dark-muted: #999999; /* microcopy sobre #080808 (CTA urgência) */
+  --color-pure-white: #ffffff; /* hover do botão claro */
+  --color-slot: #c9c8c2; /* bloco neutro da foto do Sobre (DEC-021) */
 
   /* Cores — signal (accent controlado) */
   --color-red: #c93b3e;

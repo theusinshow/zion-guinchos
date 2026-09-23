@@ -1,0 +1,175 @@
+/* Sobre — export v2 "Sobre · Mobile" / "Sobre · Desktop". Slot de foto sem UI de placeholder (DEC-021). */
+
+.section {
+  padding-bottom: 64px;
+  border-top: var(--hairline) solid var(--color-ink);
+}
+
+.visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--color-slot);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.heading {
+  position: relative;
+  margin-top: -72px;
+  padding: 28px var(--grid-gutter) 0;
+  background: var(--color-offwhite);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-sobre-h2);
+  line-height: var(--lh-heading);
+  text-transform: uppercase;
+}
+
+.titleLight {
+  font-weight: 400;
+}
+
+.text {
+  display: grid;
+  gap: 12px;
+  padding: 18px var(--grid-gutter) 0;
+}
+
+.lead,
+.paragraph {
+  font-size: 15.5px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.lead {
+  color: var(--color-ink);
+}
+
+.paragraph {
+  color: var(--color-text-secondary);
+}
+
+.facts {
+  margin: 28px var(--grid-gutter) 0;
+  border-top: var(--hairline) solid var(--color-ink);
+}
+
+.fact {
+  display: grid;
+  gap: 4px;
+  padding: 12px 0;
+}
+
+.fact + .fact {
+  border-top: var(--hairline) solid var(--color-border-light);
+}
+
+.factLabel {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--color-muted);
+}
+
+.factValue {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.note {
+  padding: 8px var(--grid-gutter) 0;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-bottom: 112px;
+  }
+
+  .visual {
+    aspect-ratio: auto;
+    height: 760px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    padding: 0 var(--grid-gutter);
+  }
+
+  .heading {
+    grid-column: 1 / span 6;
+    margin-top: -200px;
+    margin-left: calc(-1 * var(--grid-gutter));
+    padding: 56px 48px 0 var(--grid-gutter);
+  }
+
+  .text {
+    grid-column: 8 / span 5;
+    gap: 14px;
+    align-content: start;
+    padding: 40px 0 0;
+  }
+
+  .lead,
+  .paragraph {
+    font-size: 17px;
+  }
+
+  .facts {
+    grid-column: 1 / span 12;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 64px 0 0;
+  }
+
+  .fact {
+    gap: 8px;
+    align-content: start;
+    padding: 18px 24px 0;
+  }
+
+  .fact:first-child {
+    padding-left: 0;
+  }
+
+  .fact:last-child {
+    padding-right: 0;
+  }
+
+  .fact + .fact {
+    border-top: 0;
+    border-left: var(--hairline) solid var(--color-border-light);
+  }
+
+  .factLabel {
+    font-size: 10.5px;
+  }
+
+  .factValue {
+    font-size: 26px;
+    line-height: 1.05;
+  }
+
+  .note {
+    grid-column: 1 / span 12;
+    margin-top: 20px;
+    padding: 0;
+    font-size: 11px;
+    line-height: normal;
+  }
+}

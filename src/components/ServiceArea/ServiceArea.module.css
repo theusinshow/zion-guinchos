@@ -1,0 +1,309 @@
+/* Área de atendimento — export v2 "Área de atendimento · Mobile" / "Desktop". DEC-018. */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-area);
+  border-top: var(--hairline) solid var(--color-ink);
+}
+
+/* Mobile: colunas do desktop se dissolvem para reordenar os blocos como na baseline */
+.left,
+.right {
+  display: contents;
+}
+
+.title {
+  order: 1;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-area-h2);
+  line-height: var(--lh-heading);
+  text-transform: uppercase;
+}
+
+.titleLight {
+  font-weight: 400;
+}
+
+.lead {
+  order: 2;
+  margin-top: 16px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+
+.mapDesktop {
+  display: none;
+}
+
+.mapMobile {
+  order: 3;
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-top: 24px;
+}
+
+.neighbor {
+  fill: var(--color-surface-gray);
+  stroke: var(--color-secondary-muted);
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.main {
+  fill: var(--color-ink);
+  stroke: var(--color-offwhite);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.guide {
+  stroke: var(--color-ink);
+  stroke-width: 1;
+}
+
+.guideLight {
+  stroke: var(--color-offwhite);
+  stroke-width: 1;
+}
+
+.cityLabel {
+  font-family: var(--font-display);
+  font-weight: 700;
+  fill: var(--color-ink);
+}
+
+.base {
+  fill: var(--color-red);
+}
+
+.legend {
+  order: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: var(--hairline) solid var(--color-border-light);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-secondary);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* A baseline mobile mostra só 2 itens na legenda */
+.legend .legendBase {
+  display: none;
+}
+
+.swatch {
+  flex: none;
+  width: 12px;
+  height: 12px;
+}
+
+.swatchMain {
+  background: var(--color-ink);
+}
+
+.swatchBase {
+  width: 10px;
+  height: 10px;
+  background: var(--color-red);
+}
+
+.swatchConsult {
+  background: var(--color-surface-gray);
+  box-shadow: inset 0 0 0 1px var(--color-secondary-muted);
+}
+
+.mini {
+  order: 5;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.miniDesktop {
+  display: none;
+}
+
+.miniMobile {
+  flex: none;
+  width: 130px;
+  height: 88px;
+}
+
+.miniState {
+  fill: var(--color-surface-gray);
+  stroke: var(--color-ink);
+  stroke-width: 1;
+}
+
+.miniRegion {
+  fill: var(--color-mid-gray);
+}
+
+.miniMain {
+  fill: var(--color-ink);
+}
+
+.frame {
+  fill: none;
+  stroke: var(--color-red);
+  stroke-width: 1.5;
+}
+
+.miniLabel {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.miniSep {
+  display: none;
+}
+
+.other {
+  order: 6;
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: var(--hairline) solid var(--color-ink);
+}
+
+.otherTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.otherText {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  padding: 0 22px;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+    align-items: stretch;
+  }
+
+  .left {
+    grid-column: 1 / span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .right {
+    grid-column: 6 / span 7;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .lead {
+    margin-top: 0;
+    font-size: 16.5px;
+  }
+
+  .mapMobile {
+    display: none;
+  }
+
+  .mapDesktop {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+  }
+
+  .legend {
+    margin-top: 0;
+    padding-top: 14px;
+    font-size: 10.5px;
+  }
+
+  .legend .legendBase {
+    display: flex;
+  }
+
+  .mini {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .miniMobile {
+    display: none;
+  }
+
+  .miniDesktop {
+    display: block;
+    width: 300px;
+    height: 200px;
+  }
+
+  .miniLabel {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    line-height: normal;
+  }
+
+  .miniSep {
+    display: inline;
+  }
+
+  .miniBreak {
+    display: none;
+  }
+
+  .other {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 18px;
+  }
+
+  .otherTitle {
+    font-size: 22px;
+  }
+
+  .otherText {
+    font-size: 15px;
+  }
+
+  .button {
+    display: inline-flex;
+    width: auto;
+    padding: 0 28px;
+  }
+}

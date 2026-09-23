@@ -1,11 +1,13 @@
 import { business, type WhatsappMessageKey } from '@/config/business'
-
-// E.164: "+", primeiro dígito 1–9 e 10–15 dígitos no total. Qualquer outro formato é tratado como pendente.
-const E164 = /^\+[1-9]\d{9,14}$/
+import { isE164 } from '@/lib/e164'
 
 function toE164Digits(value: string | null): string | null {
-  if (!value || !E164.test(value)) return null
-  return value.slice(1)
+  return isE164(value) ? value.slice(1) : null
+}
+
+/** Telefone confirmado em E.164 (para JSON-LD), ou null. */
+export function getPhoneE164(): string | null {
+  return isE164(business.phoneE164) ? business.phoneE164 : null
 }
 
 /** `tel:` do telefone confirmado, ou null enquanto o dado estiver pendente/inválido. */

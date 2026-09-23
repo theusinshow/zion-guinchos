@@ -19,6 +19,9 @@ export const business = {
   // TODO(P1): CNPJ só após confirmação de publicação.
   cnpj: null as string | null,
 
+  // TODO(P1): URL da Política de Privacidade aprovada. null = link pendente (bloqueia release).
+  privacyPolicyUrl: null as string | null,
+
   // TODO(P1): foto real da seção Sobre (DEC-021). null = bloco neutro.
   aboutImage: null as string | null,
 

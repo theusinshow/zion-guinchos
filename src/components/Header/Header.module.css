@@ -50,6 +50,10 @@
   text-transform: uppercase;
 }
 
+.menuRoot {
+  display: flex;
+}
+
 .menuToggle {
   width: 64px;
   display: flex;
@@ -193,6 +197,7 @@
   }
 
   .call,
+  .menuRoot,
   .menuToggle,
   .menuPanel {
     display: none;

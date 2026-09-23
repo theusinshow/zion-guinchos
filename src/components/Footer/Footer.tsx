@@ -89,11 +89,17 @@ export function Footer() {
 
             <div className={styles.legal}>
               <p className={styles.label}>LEGAL</p>
-              {/* TODO(P1): página de Política de Privacidade não existe — padrão pendente (DEC-024), sem href. */}
-              <a className={styles.privacy} role="link" aria-disabled="true" data-pending="privacy">
-                Política de Privacidade
-                <span className="visually-hidden"> (página pendente)</span>
-              </a>
+              {business.privacyPolicyUrl ? (
+                <a className={styles.privacy} href={business.privacyPolicyUrl}>
+                  Política de Privacidade
+                </a>
+              ) : (
+                // TODO(P1): política ainda não publicada — padrão pendente (DEC-024), sem href; bloqueia release.
+                <a className={styles.privacy} role="link" aria-disabled="true" data-pending="privacy">
+                  Política de Privacidade
+                  <span className="visually-hidden"> (página pendente)</span>
+                </a>
+              )}
               {cnpj && <p className={styles.cnpj}>CNPJ {cnpj}</p>}
             </div>
           </div>

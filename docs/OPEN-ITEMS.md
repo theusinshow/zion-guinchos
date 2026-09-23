@@ -48,7 +48,7 @@ Observação: em conversa preliminar foi sugerido trabalhar provisoriamente com 
 - [ ] GA4 Measurement ID.
 - [ ] Google Ads ID.
 - [ ] Conversion label(s).
-- [ ] Estratégia de consentimento/cookies.
+- [ ] Estratégia de consentimento/cookies. (Implementação pronta com consent mode v2 em default negado; ponto único `updateConsent()`.)
 
 ## P2 — deploy
 
@@ -69,3 +69,7 @@ Observação: em conversa preliminar foi sugerido trabalhar provisoriamente com 
 - coordenadas;
 - tamanho de equipe;
 - mais de um caminhão.
+
+## Estado técnico (Tech Lead)
+
+A guarda `ZION_RELEASE=1 pnpm build` bloqueia a publicação enquanto faltarem: telefone, WhatsApp, domínio (`NEXT_PUBLIC_SITE_URL`), URL da Política de Privacidade e foto do Sobre. Favicon atual é recorte do símbolo raster fornecido (trocar pelo SVG oficial).

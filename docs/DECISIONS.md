@@ -180,6 +180,8 @@ Não adicionar cards, gradients, glass, glow, pills ou decoração automática f
 
 **Impacto:** 390 e 1440 continuam idênticos à referência; 320–1920 sem overflow nem colisão.
 
+**Adendo (revisão 6+7):** na faixa 768–1279 a altura da foto da Hero é limitada para manter H1 e o início dos CTAs na primeira dobra típica; 390 e ≥1280 inalterados.
+
 ## DEC-026 — Motion
 
 **Status:** aprovado (Tech Lead, Fase 7).

@@ -61,8 +61,8 @@ export function FAQList({ items }: { items: Item[] }) {
             </h3>
             <div
               id={panelId}
-              role="region"
-              aria-labelledby={buttonId}
+              role={open ? 'region' : undefined}
+              aria-labelledby={open ? buttonId : undefined}
               className={styles.panel}
               data-index={index}
               hidden={!open}

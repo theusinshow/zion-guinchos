@@ -13,6 +13,7 @@ export function Hero() {
             alt=""
             fill
             preload
+            fetchPriority="high"
             sizes="(min-width: 1441px) calc(50vw + 160px), (min-width: 1280px) calc(100vw - 560px), 100vw"
             className={styles.image}
           />

@@ -180,7 +180,7 @@ Não adicionar cards, gradients, glass, glow, pills ou decoração automática f
 
 **Impacto:** 390 e 1440 continuam idênticos à referência; 320–1920 sem overflow nem colisão.
 
-**Adendo (revisão 6+7):** na faixa 768–1279 a altura da foto da Hero é limitada para manter H1 e o início dos CTAs na primeira dobra típica; 390 e ≥1280 inalterados.
+**Adendo (revisão 6+7):** na faixa 768–1279 a altura da foto da Hero é limitada para manter H1 e o início dos CTAs na primeira dobra típica; 390 e ≥1280 inalterados. Implementado como `max(260px, min(66.667vw, 560px, 36svh))`. Limitação aceita (revisão final): em viewports paisagem baixos próximos de 1279×720–768 o topo do CTA WhatsApp fica até ~79px abaixo da dobra; H1 e o "LIGAR" do header permanecem visíveis. Reavaliar com dados reais de tráfego.
 
 ## DEC-026 — Motion
 

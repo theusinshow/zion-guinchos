@@ -1,0 +1,85 @@
+/*
+ * Tokens — Zion Guincho
+ * Fonte: docs/DESIGN.md §3 (paleta), §5–6 (grid), §7 (escala), §8 (ritmo).
+ * Valores medidos em docs/reference/Zion Landing Page v2.dc.html.
+ * Breakpoint desktop: 1024px (mobile < 1024 ≤ desktop).
+ */
+
+:root {
+  /* Cores — base */
+  --color-ink: #080808;
+  --color-dark: #111111;
+  --color-offwhite: #f3f2ed;
+  --color-white: #f7f7f5;
+
+  /* Cores — neutros observados */
+  --color-text-secondary: #4a4a4a;
+  --color-muted: #6b6b6b;
+  --color-border-light: #d8d6cf;
+  --color-secondary-muted: #b5b3ad;
+  --color-surface-gray: #e4e3dd;
+  --color-mid-gray: #9a9993;
+  --color-dark-border: #2e2e2e;
+
+  /* Cores — signal (accent controlado) */
+  --color-red: #c93b3e;
+
+  /* Fontes (variáveis definidas por next/font em layout.tsx) */
+  --font-display: var(--font-barlow-condensed), "Barlow Condensed", sans-serif;
+  --font-body: var(--font-archivo), "Archivo", Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), "IBM Plex Mono", monospace;
+
+  /* Hairline */
+  --hairline: 1px;
+
+  /*
+   * Escala de headings — clamp linear entre 390px (mobile) e 1440px (desktop).
+   * valor = min + (max - min) * (100vw - 390px) / 1050px
+   */
+  --fs-hero-h1: clamp(54px, calc(38.4px + 4vw), 96px);
+  --fs-servicos-h2: clamp(48px, calc(40.571px + 1.9048vw), 68px);
+  --fs-como-funciona-h2: clamp(46px, calc(36.343px + 2.4762vw), 72px);
+  --fs-cta-urgencia-h2: clamp(38px, calc(28.343px + 2.4762vw), 64px);
+  --fs-area-h2: clamp(44px, calc(38.057px + 1.5238vw), 60px);
+  --fs-sobre-h2: clamp(40px, calc(28.114px + 3.0476vw), 72px);
+  --fs-duvidas-h2: clamp(40px, calc(34.057px + 1.5238vw), 56px);
+  --fs-cta-final-h2: clamp(60px, calc(36.229px + 6.0952vw), 124px);
+
+  --lh-heading: 0.9;
+  --lh-display: 0.86;
+
+  /* Grid — mobile (390): padding lateral 20; layout reorganizado por seção */
+  --grid-gutter: 20px;
+
+  /* Header */
+  --header-height: 64px;
+
+  /* Ritmo vertical — mobile (DESIGN.md §8) */
+  --hero-image-height: 260px;
+  --space-servicos: 72px var(--grid-gutter) 56px;
+  --space-como-funciona: 72px var(--grid-gutter) 64px;
+  --space-cta-urgencia: 36px var(--grid-gutter) 32px;
+  --space-area: 64px var(--grid-gutter) 56px;
+  --space-duvidas: 80px var(--grid-gutter) 88px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    /* Grid — desktop (1440): 12 col, padding 64, gap 24 */
+    --grid-columns: 12;
+    --grid-gutter: 64px;
+    --grid-gap: 24px;
+
+    --header-height: 88px;
+
+    /* Ritmo vertical — desktop (DESIGN.md §8) */
+    --hero-visual-height: 720px;
+    --hero-rail-height: 96px;
+    --space-servicos: 128px var(--grid-gutter) 96px;
+    --space-como-funciona: 120px var(--grid-gutter) 128px;
+    --space-cta-urgencia: 48px var(--grid-gutter);
+    --space-area: 96px var(--grid-gutter) 88px;
+    --space-duvidas: 144px var(--grid-gutter) 160px;
+    --space-cta-final-top: 128px;
+  }
+}

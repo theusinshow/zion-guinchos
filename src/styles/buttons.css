@@ -72,14 +72,26 @@
   color: var(--color-ink);
 }
 
-/* O Plex Mono não tem "→" (U+2192): no export o glifo cai em monospace do sistema.
-   Declarado direto para não cair no fallback métrico do next/font (Arial a 134%). */
+/* Seta SVG (components/Arrow, DEC-029): o span define tamanho (font-size = 1em), cor e hover. */
+.arrow-icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
 .btn-arrow {
   display: inline-block;
-  font-family: monospace;
+  flex: none; /* rótulo longo em tela estreita não achata a seta */
   font-size: 15px;
   color: var(--color-red);
-  transition: transform 160ms ease;
+  transition:
+    transform 160ms ease,
+    color 160ms ease;
+}
+
+/* Fundo vermelho no hover: seta vermelha sumiria, passa a preto */
+.btn-primary:hover .btn-arrow {
+  color: var(--color-ink);
 }
 
 /* Motion: a seta desloca poucos pixels no hover (zerado em reduced-motion) */
@@ -93,7 +105,7 @@
   cursor: default;
 }
 
-/* < 360px: rótulos longos ("Enviar minha localização →") não cabem na coluna de 280px com o tracking/padding da
+/* < 360px: rótulos longos ("Enviar localização no WhatsApp →") não cabem na coluna de 280px com o tracking/padding da
    referência de 390; compacta sem quebrar linha. Especificidade acima dos ajustes de tamanho dos módulos. */
 @media (max-width: 359px) {
   a.btn {

@@ -5,7 +5,7 @@ import styles from './About.module.css'
 const FACTS = [
   { label: 'BASE', value: 'Palhoça / SC' },
   { label: 'ATENDIMENTO', value: '24 horas · todos os dias' },
-  { label: 'COBERTURA PRINCIPAL', value: 'Palhoça · São José · Florianópolis' },
+  { label: 'CONTATO', value: 'Direto com quem atende' },
 ]
 
 export function About() {
@@ -38,6 +38,15 @@ export function About() {
           <p className={styles.paragraph}>
             Do contato inicial ao atendimento, você fala diretamente com quem realizará o serviço.
           </p>
+          {/* DEC-038: só aparece com frase confirmada pelo cliente; atribuição só com nome confirmado. */}
+          {business.ownerQuote && (
+            <figure className={styles.quote}>
+              <blockquote className={styles.quoteText}>
+                <p>{business.ownerQuote}</p>
+              </blockquote>
+              {business.ownerName && <figcaption className={styles.quoteBy}>{business.ownerName} · Zion Guincho</figcaption>}
+            </figure>
+          )}
         </div>
 
         <dl className={styles.facts} data-reveal>

@@ -119,6 +119,23 @@ a:hover {
   border: 0;
 }
 
+/*
+ * Barra de contato do mobile (DEC-030): foco e âncoras param acima dela (WCAG 2.4.11).
+ * 61px = botão de 60px + hairline, mais a safe area do iPhone.
+ */
+@media (max-width: 1279px) {
+  html {
+    scroll-padding-bottom: calc(61px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Header sticky do desktop (DEC-034): âncoras e foco param abaixo dele. */
+@media (min-width: 1280px) {
+  html {
+    scroll-padding-top: var(--header-height);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

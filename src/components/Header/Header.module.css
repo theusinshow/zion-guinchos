@@ -1,4 +1,4 @@
-/* Header — export v2 "Hero · Mobile" (64px) / "Hero · Desktop" (88px). Não é sticky. */
+/* Header — export v2 "Hero · Mobile" (64px) / "Hero · Desktop" (88px). Sticky com headroom só no desktop (DEC-034). */
 
 .header {
   position: relative;
@@ -184,7 +184,18 @@
   .cta {
     grid-column: 9 / span 4;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+    gap: 16px;
+  }
+
+  /* DEC-038: número à vista (só com dado confirmado). < 1440 não cabe ao lado da nav; fica no CTA final. */
+  .ctaPhone {
+    display: none;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
   .ctaButton {
@@ -201,5 +212,42 @@
   .menuToggle,
   .menuPanel {
     display: none;
+  }
+}
+
+/*
+ * DEC-034 — desktop: header fixo no topo que some ao rolar para baixo e volta ao rolar para cima
+ * (HeaderScroll). Mesma altura e hairline, sem sombra. Oculto = fora da tela e fora do foco.
+ */
+@media (min-width: 1280px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .header[data-hidden='true'] {
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 1280px) and (prefers-reduced-motion: no-preference) {
+  .header {
+    transition:
+      transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s;
+  }
+
+  .header[data-hidden='true'] {
+    transition:
+      transform 200ms ease-in,
+      visibility 0s 200ms;
+  }
+}
+
+@media (min-width: 1440px) {
+  .ctaPhone {
+    display: block;
   }
 }

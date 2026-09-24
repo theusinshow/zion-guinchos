@@ -141,3 +141,10 @@
     font-size: 16.5px;
   }
 }
+
+/* DEC-033: piso de 11,5px no desktop */
+@media (min-width: 1280px) {
+  .number {
+    font-size: 11.5px;
+  }
+}

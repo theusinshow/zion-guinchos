@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Arrow } from '@/components/Arrow/Arrow'
 import { ContactLink } from '@/components/ContactLink/ContactLink'
 import { business } from '@/config/business'
 import { showPendingPlaceholders } from '@/lib/contact'
@@ -31,12 +32,12 @@ export function Footer() {
       <div className={styles.main}>
         <div className={styles.brand}>
           <Image src="/brand/zion-logo.png" alt="Zion Guincho" width={640} height={420} sizes="104px" className={styles.logo} />
-          <p className={styles.description}>Guincho e auto socorro 24h em Palhoça, São José e Florianópolis.</p>
+          <p className={styles.description}>Guincho e auto socorro 24h. Base em Palhoça/SC.</p>
         </div>
 
         <div className={styles.quickActions}>
           <ContactLink channel="whatsapp" placement="footer" className={`btn btn-primary ${styles.quickButton}`}>
-            WhatsApp <span className="btn-arrow" aria-hidden="true">→</span>
+            WhatsApp <span className="btn-arrow" aria-hidden="true"><Arrow /></span>
           </ContactLink>
           <ContactLink channel="phone" placement="footer" className={`btn btn-outline ${styles.quickButton}`}>
             Ligar
@@ -64,7 +65,7 @@ export function Footer() {
             <div className={styles.contactList}>
               <ContactLink channel="whatsapp" placement="footer" className={styles.contactLink}>
                 <span className={styles.contactName}>
-                  WhatsApp <span className={styles.contactArrow} aria-hidden="true">→</span>
+                  WhatsApp <span className={styles.contactArrow} aria-hidden="true"><Arrow /></span>
                 </span>
                 {whatsappNumber && <span className={styles.contactNumber}>{whatsappNumber}</span>}
               </ContactLink>

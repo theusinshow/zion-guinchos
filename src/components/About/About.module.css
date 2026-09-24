@@ -14,6 +14,7 @@
 
 .image {
   object-fit: cover;
+  object-position: 72% 55%; /* retrato no mobile: mantém a cabine no quadro */
 }
 
 .heading {
@@ -43,6 +44,7 @@
 
 .lead,
 .paragraph {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   font-size: 15.5px;
   line-height: 1.6;
   text-wrap: pretty;
@@ -54,6 +56,41 @@
 
 .paragraph {
   color: var(--color-text-secondary);
+}
+
+/* DEC-038 — frase do proprietário (só com dado confirmado). Hairline à esquerda de 1px, sem aspas decorativas. */
+.quote {
+  margin: 12px 0 0;
+  padding-left: 16px;
+  border-left: var(--hairline) solid var(--color-ink);
+}
+
+.quoteText {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.quoteBy {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+@media (min-width: 1280px) {
+  .quoteText {
+    font-size: 28px;
+  }
+
+  .quoteBy {
+    font-size: 11.5px;
+  }
 }
 
 .facts {
@@ -73,7 +110,7 @@
 
 .factLabel {
   font-family: var(--font-mono);
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: 0.14em;
   color: var(--color-muted);
 }
@@ -89,7 +126,7 @@
 .note {
   padding: 8px var(--gutter-end) 0 var(--grid-gutter);
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   line-height: 1.6;
   color: var(--color-muted);
 }
@@ -156,7 +193,7 @@
   }
 
   .factLabel {
-    font-size: 10.5px;
+    font-size: 11.5px;
   }
 
   .factValue {
@@ -168,7 +205,7 @@
     grid-column: 1 / span 12;
     margin-top: 20px;
     padding: 0;
-    font-size: 11px;
+    font-size: 11.5px;
     line-height: normal;
   }
 }

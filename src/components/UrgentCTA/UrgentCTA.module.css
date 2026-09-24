@@ -30,6 +30,7 @@
 }
 
 .body {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   margin-top: 12px;
   font-size: 14.5px;
   line-height: 1.5;
@@ -56,6 +57,13 @@
   font-size: 14px;
 }
 
+/* < 390px: "Enviar localização no WhatsApp" (DEC-032) não cabe a 17px na coluna estreita */
+@media (max-width: 389px) {
+  .location {
+    font-size: 15px;
+  }
+}
+
 .phone {
   height: 56px;
 }
@@ -63,7 +71,7 @@
 .micro {
   margin-top: 12px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.6;
   color: var(--color-dark-muted);
 }
@@ -133,7 +141,7 @@
 
   .micro {
     margin-top: 0;
-    font-size: 10.5px;
+    font-size: 11.5px;
     line-height: normal;
     letter-spacing: 0.08em;
   }

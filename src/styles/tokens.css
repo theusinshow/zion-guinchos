@@ -9,7 +9,7 @@
   /* Cores — base */
   --color-ink: #080808;
   --color-dark: #111111;
-  --color-offwhite: #f3f2ed;
+  --color-offwhite: #fafaf8; /* DEC-027: mais branco que o #f3f2ed da referência */
   --color-white: #f7f7f5;
 
   /* Cores — neutros observados */
@@ -84,6 +84,16 @@
 @media (min-width: 768px) and (max-width: 1279px) {
   :root {
     --hero-image-height: max(260px, min(66.667vw, 560px, 36svh));
+  }
+}
+
+/*
+ * DEC-031 — celulares baixos (< 768 de largura, ≤ 760 de altura): a foto da Hero cede até 80px
+ * para o "Chamar no WhatsApp" caber na primeira tela (390×700 → CTA termina em ~640). Piso 180px.
+ */
+@media (max-width: 767px) and (max-height: 760px) {
+  :root {
+    --hero-image-height: clamp(180px, calc(100svh - 500px), 260px);
   }
 }
 

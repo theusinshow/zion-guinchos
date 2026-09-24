@@ -20,6 +20,7 @@
 }
 
 .lead {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   margin-top: 16px;
   font-size: 15.5px;
   line-height: 1.6;
@@ -81,7 +82,7 @@
   padding-top: 12px;
   border-top: var(--hairline) solid var(--color-border-light);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: var(--color-text-secondary);
 }
@@ -157,7 +158,7 @@
 
 .miniLabel {
   font-family: var(--font-mono);
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: 0.14em;
   line-height: 1.6;
   color: var(--color-muted);
@@ -183,6 +184,7 @@
 }
 
 .otherText {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   font-size: 14.5px;
   line-height: 1.6;
   color: var(--color-text-secondary);
@@ -256,7 +258,7 @@
   .legend {
     margin-top: 16px;
     padding-top: 14px;
-    font-size: 10.5px;
+    font-size: 11.5px;
   }
 
   .legend .legendBase {
@@ -281,7 +283,7 @@
   }
 
   .miniLabel {
-    font-size: 10px;
+    font-size: 11.5px;
     letter-spacing: 0.16em;
     line-height: normal;
   }

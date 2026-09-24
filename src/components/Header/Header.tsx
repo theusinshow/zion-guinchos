@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Arrow } from '@/components/Arrow/Arrow'
 import { ContactLink } from '@/components/ContactLink/ContactLink'
+import { business } from '@/config/business'
+import { HeaderScroll } from './HeaderScroll'
 import { MobileMenu } from './MobileMenu'
 import styles from './Header.module.css'
 
@@ -13,7 +16,7 @@ export const NAV_LINKS = [
 
 export function Header() {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-site-header>
       <div className={styles.brand} data-menu-background>
         <Link href="/" className={styles.logo}>
           {/* TODO(asset): trocar pelo SVG do logo quando existir (OPEN-ITEMS P1). */}
@@ -30,8 +33,14 @@ export function Header() {
       </nav>
 
       <div className={styles.cta}>
+        {/* DEC-038: no desktop o tel: nem sempre funciona; o número à vista permite discar do celular. */}
+        {business.phoneDisplay && (
+          <ContactLink channel="phone" placement="header" className={styles.ctaPhone}>
+            {business.phoneDisplay}
+          </ContactLink>
+        )}
         <ContactLink channel="whatsapp" placement="header" className={`btn btn-primary ${styles.ctaButton}`}>
-          Solicitar guincho <span className="btn-arrow" aria-hidden="true">→</span>
+          Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true"><Arrow /></span>
         </ContactLink>
       </div>
 
@@ -55,13 +64,14 @@ export function Header() {
         </nav>
         <div className={styles.menuActions}>
           <ContactLink channel="whatsapp" placement="menu" className={`btn btn-primary ${styles.menuButton}`}>
-            Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true">→</span>
+            Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true"><Arrow /></span>
           </ContactLink>
           <ContactLink channel="phone" placement="menu" className={`btn btn-outline ${styles.menuButton} ${styles.menuButtonOutline}`}>
             Ligar agora
           </ContactLink>
         </div>
       </MobileMenu>
+      <HeaderScroll />
     </header>
   )
 }

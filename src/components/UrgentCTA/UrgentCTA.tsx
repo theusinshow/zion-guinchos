@@ -1,3 +1,4 @@
+import { Arrow } from '@/components/Arrow/Arrow'
 import { ContactLink } from '@/components/ContactLink/ContactLink'
 import styles from './UrgentCTA.module.css'
 
@@ -23,13 +24,13 @@ export function UrgentCTA() {
             placement="urgent_cta"
             className={`btn btn-light ${styles.button} ${styles.location}`}
           >
-            Enviar minha localização <span className="btn-arrow" aria-hidden="true">→</span>
+            Enviar localização no WhatsApp <span className="btn-arrow" aria-hidden="true"><Arrow /></span>
           </ContactLink>
           <ContactLink channel="phone" placement="urgent_cta" className={`btn btn-outline-light ${styles.button} ${styles.phone}`}>
             Ligar agora
           </ContactLink>
         </div>
-        <p className={styles.micro}>Atendimento 24 horas em Palhoça, São José e Florianópolis.</p>
+        <p className={styles.micro}>No WhatsApp: clipe ou + › Localização › enviar a localização atual.</p>
       </div>
     </section>
   )

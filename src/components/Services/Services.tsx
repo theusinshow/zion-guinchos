@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from './Services.module.css'
 
 // Ícones: SVG inline do export v2 (viewBox 24, traço 1.8, square/miter).
@@ -49,7 +50,7 @@ const ICONS = {
 const SERVICES = [
   {
     title: 'Guincho 24h',
-    text: 'Remoção e transporte de veículos em Palhoça, São José, Florianópolis e região.',
+    text: 'Remoção e transporte do veículo parado, a qualquer hora do dia ou da noite.',
     icon: ICONS.guincho,
   },
   {
@@ -90,6 +91,27 @@ export function Services() {
           <p className={styles.lead}>
             Atendimento para diferentes situações, desde uma emergência até o transporte agendado do seu veículo.
           </p>
+          {/* DEC-037: ilustram os serviços 02 e 03. Placeholders de IA (ASSETS.md): decorativos, alt vazio (DEC-020). */}
+          <div className={styles.photos}>
+            <div className={styles.photo}>
+              <Image
+                src="/images/generated/zion-truck-with-car.webp"
+                alt=""
+                fill
+                sizes="(min-width: 1280px) 260px, 50vw"
+                className={`${styles.photoImage} ${styles.photoCar}`}
+              />
+            </div>
+            <div className={styles.photo}>
+              <Image
+                src="/images/generated/zion-truck-with-motorcycle.webp"
+                alt=""
+                fill
+                sizes="(min-width: 1280px) 260px, 50vw"
+                className={`${styles.photoImage} ${styles.photoMoto}`}
+              />
+            </div>
+          </div>
         </div>
 
         <ol className={styles.list} data-reveal>

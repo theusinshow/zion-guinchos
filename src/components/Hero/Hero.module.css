@@ -23,7 +23,7 @@
   padding: 5px 8px;
   background: var(--color-offwhite);
   font-family: var(--font-mono);
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: 0.14em;
   color: var(--color-ink);
 }
@@ -38,7 +38,7 @@
   align-items: center;
   gap: 10px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--color-ink);
 }
@@ -70,6 +70,7 @@
 }
 
 .body {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   margin-top: 18px;
   font-size: 16px;
   line-height: 1.6;
@@ -94,6 +95,7 @@
 }
 
 .micro {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   margin-top: 16px;
   font-size: 14px;
   line-height: 1.55;
@@ -121,7 +123,7 @@
 
 .railCities {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -154,7 +156,7 @@
     right: 24px;
     bottom: 18px;
     padding: 7px 10px;
-    font-size: 10.5px;
+    font-size: 11.5px;
     letter-spacing: 0.16em;
   }
 
@@ -238,8 +240,50 @@
     padding-left: 24px;
     border-left: var(--hairline) solid var(--color-border-light);
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 11.5px;
     letter-spacing: 0.16em;
     color: var(--color-muted);
+  }
+}
+
+/*
+ * DEC-031 — primeira dobra em telas baixas. Os CTAs precisam aparecer sem rolar:
+ * mobile ≤ 760 de altura (a foto já encolhe em tokens.css) e desktop ≤ 720 (ex.: 1366×768 com a barra do navegador).
+ * Nas composições de referência (390×844, 1440×900) nada muda.
+ */
+@media (max-width: 767px) and (max-height: 760px) {
+  .content {
+    padding-top: 24px;
+  }
+
+  .title {
+    margin-top: 14px;
+  }
+
+  .body {
+    margin-top: 14px;
+  }
+
+  .actions {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1280px) and (max-height: 720px) {
+  .content {
+    padding-top: 40px;
+  }
+
+  .title {
+    margin-top: 20px;
+    font-size: min(var(--fs-hero-h1), 13svh);
+  }
+
+  .body {
+    margin-top: 20px;
+  }
+
+  .actions {
+    margin-top: 24px;
   }
 }

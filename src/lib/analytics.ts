@@ -6,7 +6,7 @@
 
 export type TrackEvent = 'whatsapp_click' | 'phone_click' | 'location_cta_click'
 
-export type TrackPlacement = 'header' | 'hero' | 'como_funciona' | 'urgent_cta' | 'area' | 'final' | 'footer' | 'menu'
+export type TrackPlacement = 'header' | 'hero' | 'como_funciona' | 'urgent_cta' | 'area' | 'final' | 'footer' | 'menu' | 'action_bar'
 
 export type TrackParams = {
   placement: TrackPlacement
@@ -27,7 +27,7 @@ const ADS_CONVERSION_LABELS: Record<TrackEvent, string> = {
 export const analyticsEnabled = Boolean(GA_ID || ADS_ID)
 
 const TRACK_EVENTS: readonly TrackEvent[] = ['whatsapp_click', 'phone_click', 'location_cta_click']
-const PLACEMENTS: readonly TrackPlacement[] = ['header', 'hero', 'como_funciona', 'urgent_cta', 'area', 'final', 'footer', 'menu']
+const PLACEMENTS: readonly TrackPlacement[] = ['header', 'hero', 'como_funciona', 'urgent_cta', 'area', 'final', 'footer', 'menu', 'action_bar']
 
 export const isTrackEvent = (value: unknown): value is TrackEvent => TRACK_EVENTS.includes(value as TrackEvent)
 export const isTrackPlacement = (value: unknown): value is TrackPlacement => PLACEMENTS.includes(value as TrackPlacement)

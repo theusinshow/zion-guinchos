@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Arrow } from '@/components/Arrow/Arrow'
 import { ContactLink } from '@/components/ContactLink/ContactLink'
 import styles from './Hero.module.css'
 
@@ -9,7 +10,7 @@ export function Hero() {
         <div className={styles.media}>
           {/* Placeholder gerado por IA (ASSETS.md) — alt vazio por DEC-020. TODO(asset): foto real. */}
           <Image
-            src="/images/hero-truck.jpg"
+            src="/images/generated/zion-hero-truck-v2.webp"
             alt=""
             fill
             preload
@@ -41,14 +42,14 @@ export function Hero() {
           </p>
           <div className={styles.actions}>
             <ContactLink channel="whatsapp" placement="hero" className={`btn btn-primary ${styles.button}`}>
-              Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true">→</span>
+              Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true"><Arrow /></span>
             </ContactLink>
             <ContactLink channel="phone" placement="hero" className={`btn btn-outline ${styles.button} ${styles.buttonOutline}`}>
               Ligar agora
             </ContactLink>
           </div>
           <p className={styles.micro}>
-            <strong>Está parado agora?</strong> Envie sua localização pelo WhatsApp para agilizar o atendimento.
+            <strong>Está parado?</strong> Mande a localização pelo WhatsApp.
           </p>
         </div>
       </div>

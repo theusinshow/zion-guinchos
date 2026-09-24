@@ -6,9 +6,9 @@ import styles from './Header.module.css'
 const FOCUSABLE = 'a[href], button:not([disabled])'
 const DESKTOP = '(min-width: 1280px)'
 
-/** Fundo que fica inerte com o menu aberto: conteúdo da página + itens do header fora do menu. */
+/** Fundo que fica inerte com o menu aberto: conteúdo da página, barra de contato e itens do header fora do menu. */
 function backgroundElements(header: HTMLElement | null): HTMLElement[] {
-  const page = [...document.querySelectorAll<HTMLElement>('main, footer')]
+  const page = [...document.querySelectorAll<HTMLElement>('main, footer, [data-action-bar]')]
   const headerItems = header ? [...header.querySelectorAll<HTMLElement>('[data-menu-background]')] : []
   return [...page, ...headerItems]
 }

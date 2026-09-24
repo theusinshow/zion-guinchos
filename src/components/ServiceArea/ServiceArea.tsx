@@ -1,3 +1,4 @@
+import { Arrow } from '@/components/Arrow/Arrow'
 import { ContactLink } from '@/components/ContactLink/ContactLink'
 import { desktopShapes, miniDesktopShapes, miniMobileShapes, mobileShapes, type MapShape, type MiniShape } from './mapData'
 import styles from './ServiceArea.module.css'
@@ -121,7 +122,7 @@ export function ServiceArea() {
         </p>
         <div>
           <ContactLink channel="whatsapp" placement="area" className={`btn btn-primary ${styles.button}`}>
-            Consultar atendimento <span className="btn-arrow" aria-hidden="true">→</span>
+            Consultar pelo WhatsApp <span className="btn-arrow" aria-hidden="true"><Arrow /></span>
           </ContactLink>
         </div>
       </div>

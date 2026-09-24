@@ -1,10 +1,11 @@
+import { Arrow } from '@/components/Arrow/Arrow'
 import { ContactLink } from '@/components/ContactLink/ContactLink'
 import styles from './HowItWorks.module.css'
 
 const STEPS = [
-  { title: 'Chame a Zion', text: 'Entre em contato pelo WhatsApp ou telefone.' },
+  { title: 'Chame a Zion', text: 'Entre em contato pelo WhatsApp ou telefone. No WhatsApp, a mensagem já vai pronta.' },
   { title: 'Envie sua localização', text: 'Informe onde você está e qual veículo precisa de atendimento.' },
-  { title: 'Receba o atendimento', text: 'Com as informações necessárias, a Zion inicia o atendimento.' },
+  { title: 'Receba o atendimento', text: 'Você fala diretamente com quem vai realizar o serviço, do primeiro contato ao atendimento.' },
 ]
 
 export function HowItWorks() {
@@ -50,7 +51,7 @@ export function HowItWorks() {
 
       <div className={styles.actions} data-reveal>
         <ContactLink channel="whatsapp" placement="como_funciona" className={`btn btn-primary ${styles.button}`}>
-          Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true">→</span>
+          Chamar no WhatsApp <span className="btn-arrow" aria-hidden="true"><Arrow /></span>
         </ContactLink>
         <ContactLink channel="phone" placement="como_funciona" className={`btn btn-outline ${styles.button} ${styles.phone}`}>
           Ligar agora

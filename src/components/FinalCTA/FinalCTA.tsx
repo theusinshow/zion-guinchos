@@ -1,4 +1,6 @@
+import { Arrow } from '@/components/Arrow/Arrow'
 import { ContactLink } from '@/components/ContactLink/ContactLink'
+import { business } from '@/config/business'
 import styles from './FinalCTA.module.css'
 
 export function FinalCTA() {
@@ -33,7 +35,7 @@ export function FinalCTA() {
 
         <div className={styles.details}>
           <p className={styles.body}>
-            Atendimento em Palhoça, São José e Florianópolis, além de transportes para outras cidades sob consulta.
+            Atendimento 24 horas, todos os dias. Transportes para outras cidades sob consulta.
           </p>
           <p className={`${styles.micro} ${styles.microDesktop}`}>
             Envie sua localização e informe qual veículo precisa de atendimento.
@@ -43,10 +45,14 @@ export function FinalCTA() {
 
       <div className={styles.actions}>
         <ContactLink channel="whatsapp" placement="final" className={`${styles.action} ${styles.whatsapp}`}>
-          Chamar no WhatsApp <span className={styles.arrow} aria-hidden="true">→</span>
+          Chamar no WhatsApp <span className={styles.arrow} aria-hidden="true"><Arrow /></span>
         </ContactLink>
         <ContactLink channel="phone" placement="final" className={`${styles.action} ${styles.phone}`}>
-          Ligar agora <span className={styles.arrow} aria-hidden="true">↗</span>
+          <span>
+            Ligar agora
+            {business.phoneDisplay && <span className={styles.phoneNumber}>{business.phoneDisplay}</span>}
+          </span>
+          <span className={styles.arrow} aria-hidden="true"><Arrow direction="up-right" /></span>
         </ContactLink>
       </div>
 

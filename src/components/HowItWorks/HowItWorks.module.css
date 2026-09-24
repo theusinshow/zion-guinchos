@@ -108,7 +108,7 @@
 
 .number {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   color: var(--color-muted);
 }
 
@@ -125,6 +125,7 @@
 }
 
 .stepText {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   font-size: 14.5px;
   line-height: 1.45;
   color: var(--color-text-secondary);

@@ -18,11 +18,39 @@
 }
 
 .lead {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   margin-top: 18px;
   font-size: 15.5px;
   line-height: 1.6;
   color: var(--color-text-secondary);
   text-wrap: pretty;
+}
+
+/* DEC-037 — par de fotos (carro / moto na plataforma). Sem moldura, radius 0, fundo do slot enquanto carrega. */
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-slot);
+}
+
+.photoImage {
+  object-fit: cover;
+}
+
+.photoCar {
+  object-position: 50% 60%;
+}
+
+.photoMoto {
+  object-position: 62% 55%;
 }
 
 .list {
@@ -64,6 +92,7 @@
 }
 
 .itemText {
+  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
   font-size: 15px;
   line-height: 1.5;
   color: var(--color-text-secondary);
@@ -89,7 +118,7 @@
 .alsoLabel {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--color-muted);
 }
@@ -128,7 +157,7 @@
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
     column-gap: var(--grid-gap);
-    align-items: start;
+    align-items: stretch; /* a coluna do texto vai até o fim da lista: as fotos alinham com a hairline de baixo */
   }
 
   .intro {
@@ -144,8 +173,19 @@
     font-size: 16.5px;
   }
 
+  .photos {
+    gap: 16px;
+    margin-top: auto;
+    padding-top: 12px;
+  }
+
+  .photo {
+    aspect-ratio: 16 / 9;
+  }
+
   .list {
     grid-column: 7 / span 6;
+    align-self: start;
     margin-top: 0;
   }
 
@@ -192,7 +232,7 @@
 
   .alsoLabel {
     grid-column: 1 / span 2;
-    font-size: 11px;
+    font-size: 11.5px;
   }
 
   .alsoList {

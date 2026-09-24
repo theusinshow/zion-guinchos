@@ -37,7 +37,7 @@ const description =
 
 // Ícones: src/app/icon.png e apple-icon.png, recortes do símbolo fornecido (uploads/1.jpg) sobre off-white.
 // TODO(P1): trocar pelo SVG oficial do símbolo quando existir.
-// canonical/og:url só com NEXT_PUBLIC_SITE_URL; og:image só quando existir asset aprovado (OPEN-ITEMS P1).
+// canonical/og:url só com NEXT_PUBLIC_SITE_URL. og:image: src/app/opengraph-image.jpg (DEC-037, 1200×630).
 export const metadata: Metadata = {
   ...(siteUrl ? { metadataBase: new URL(siteUrl), alternates: { canonical: '/' } } : {}),
   title,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     ...(siteUrl ? { url: '/' } : {}),
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title,
     description,
   },

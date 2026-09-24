@@ -31,7 +31,8 @@ export function checkRelease(root: string, env: NodeJS.ProcessEnv): Result {
   if (!isE164(business.whatsappE164)) errors.push('business.whatsappE164 — WhatsApp confirmado em E.164 (P0)')
   if (!isHttpUrl(env.NEXT_PUBLIC_SITE_URL)) errors.push('NEXT_PUBLIC_SITE_URL — domínio definitivo (canonical, sitemap, robots)')
   if (!business.privacyPolicyUrl) errors.push('business.privacyPolicyUrl — Política de Privacidade publicada (P1)')
-  if (!business.aboutImage) errors.push('business.aboutImage — foto real da seção Sobre (DEC-021)')
+  if (!business.aboutImage || business.aboutImageIsPlaceholder)
+    errors.push('business.aboutImage — foto real da seção Sobre (DEC-021; placeholder de IA não libera, DEC-037)')
 
   const brand = path.join(root, 'public', 'brand')
   const app = path.join(root, 'src', 'app')

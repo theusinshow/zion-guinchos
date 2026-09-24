@@ -56,7 +56,7 @@
 .label {
   margin-bottom: 14px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.18em;
   color: var(--color-muted);
 }
@@ -69,6 +69,13 @@
   font-size: 15px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+/* Toque: 44px de altura por link (WCAG 2.5.5). Com mouse, o ritmo da referência continua. */
+@media (pointer: coarse) {
+  .navLink {
+    padding: 13px 0;
+  }
 }
 
 .contact {
@@ -96,7 +103,6 @@
 /* Glifo ausente no Plex Mono: monospace do sistema, como no export */
 .contactArrow {
   display: inline-block;
-  font-family: monospace;
   font-size: 13px;
   color: var(--color-red);
   transition: transform 160ms ease;
@@ -110,14 +116,14 @@
 
 .contactNumber {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   color: var(--color-muted);
 }
 
 .regionItem {
   padding: 3px 0;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.08em;
 }
 
@@ -126,6 +132,7 @@
 }
 
 .privacy {
+  position: relative;
   padding-bottom: 2px;
   border-bottom: var(--hairline) solid var(--color-ink);
   font-family: var(--font-mono);
@@ -133,10 +140,17 @@
   letter-spacing: 0.06em;
 }
 
+/* Área de toque de ~45px sem mudar o desenho do link (não há outro link vizinho). */
+.privacy::after {
+  content: '';
+  position: absolute;
+  inset: -14px -4px;
+}
+
 .cnpj {
   margin-top: 10px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   color: var(--color-muted);
 }
 
@@ -149,7 +163,7 @@
   padding: 0 var(--grid-gutter);
   border-top: var(--hairline) solid var(--color-border-light);
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.14em;
   color: var(--color-muted);
 }
@@ -202,11 +216,22 @@
   }
 
   .regionItem {
-    font-size: 11px;
+    font-size: 11.5px;
   }
 
   .legal {
     grid-column: 11 / span 2;
     margin-top: 0;
+  }
+}
+
+/* DEC-033: piso de 11,5px no desktop */
+@media (min-width: 1280px) {
+  .label,
+  .contactNumber,
+  .privacy,
+  .cnpj,
+  .bottom {
+    font-size: 11.5px;
   }
 }

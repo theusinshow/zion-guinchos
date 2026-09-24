@@ -38,13 +38,13 @@ Não publicar as cidades extras contidas nessa imagem como áreas atendidas conf
 
 ### Placeholders de IA fornecidos pelo cliente (2026-09-24, DEC-037)
 
-Originais em `export/imagens-zion/png-originais/`; WebP em `export/imagens-zion/webp/` e servidos de `public/images/generated/`.
+Originais PNG em `docs/assets/generated/`; versões WebP servidas de `public/images/generated/`.
 
 - `zion-hero-truck-v2.webp` (1672×941) — Hero. Substitui `hero-truck.jpg`.
 - `zion-about-truck.webp` (1679×937) — slot do Sobre. Não libera release (`aboutImageIsPlaceholder`).
 - `zion-truck-with-car.webp` / `zion-truck-with-motorcycle.webp` (1678×937) — par de fotos em Serviços (serviços 02 e 03).
 - `zion-og-background.webp` (1200×630) — convertido para `src/app/opengraph-image.jpg`.
-- `zion-truck-with-boat-concept.webp` — **não usado**: transporte de embarcação não é serviço confirmado (PRODUCT.md §6). Continua em `public/images/generated/`, portanto acessível por URL; remover do `public` antes do deploy se não for confirmado.
+- `zion-truck-with-boat-concept.png` — **não usado**: transporte de embarcação não é serviço confirmado (PRODUCT.md §6). Só o original fica em `docs/assets/generated/`; não há versão em `public/` (não é publicado).
 
 Todos são IA: alt vazio (decorativos, DEC-020) e nunca apresentados como o caminhão real da Zion.
 

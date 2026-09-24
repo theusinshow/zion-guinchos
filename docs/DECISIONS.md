@@ -152,7 +152,7 @@ Não adicionar cards, gradients, glass, glow, pills ou decoração automática f
 
 ## DEC-023 — Sem Mobile Action Bar
 
-**Status:** aprovado (Tech Lead, Fase 0).
+**Status:** substituída por DEC-030 (2026-09-23).
 
 **Decisão:** a referência final não contém barra fixa de ações no mobile; o header mobile já tem "LIGAR". Não implementar `MobileActionBar`.
 
@@ -187,6 +187,121 @@ Não adicionar cards, gradients, glass, glow, pills ou decoração automática f
 **Status:** aprovado (Tech Lead, Fase 7).
 
 **Decisão:** reveal (opacity + translateY 12px, 500ms ease-out, sem stagger) em blocos abaixo da dobra, via um único IntersectionObserver; nada na Hero/Header. Estado oculto só com `html.reveal-ready` (JS) e `prefers-reduced-motion: no-preference`. Hovers: seta ±4–6px, sublinhado nos links de nav.
+
+## DEC-027 — Fundo claro mais branco
+
+**Status:** aprovado (cliente, 2026-09-23).
+
+**Contexto:** o off-white `#F3F2ED` da referência foi considerado amarelado demais.
+
+**Decisão:** token `--color-offwhite` passa a `#FAFAF8`. Demais neutros inalterados; hover do botão claro continua `#FFFFFF`.
+
+**Impacto:** todas as superfícies claras (Hero, seções, Sobre, Footer, menu mobile) e textos claros sobre fundo escuro ficam mais brancos. Contraste de texto escuro/cinza/vermelho sobre o fundo só melhora.
+
+## DEC-028 — Leão do CTA final no desktop
+
+**Status:** aprovado (cliente, 2026-09-23).
+
+**Contexto:** no desktop (≥1280) o leão de fundo do CTA final aparecia cortado e deslocado para a direita, fora do grid.
+
+**Decisão:** leão com 944px de largura, centralizado na altura da seção, com a borda direita do desenho alinhada à borda direita do grid. Opacidade, filtro e mobile inalterados.
+
+**Impacto:** só o posicionamento do leão no desktop muda; o conteúdo e os CTAs continuam iguais.
+
+## DEC-029 — Setas dos CTAs em SVG
+
+**Status:** aprovado (cliente, 2026-09-23).
+
+**Contexto:** as setas eram os caracteres `→`/`↗`, que o IBM Plex Mono não tem; o navegador desenhava com a fonte monospace do sistema, e o resultado mudava de um sistema para outro.
+
+**Decisão:** componente `Arrow` (SVG inline, traço 1.5 em viewBox 16, ponta aberta, `currentColor`, 1em). Direções `right` e `up-right`. Os spans existentes continuam controlando tamanho, cor (vermelho) e hover.
+
+**Impacto:** mesma posição, cor e animação em todos os CTAs; desenho idêntico em qualquer sistema operacional.
+
+## DEC-030 — Barra de contato no mobile
+
+**Status:** aprovado (cliente, 2026-09-23, após critique de design). Substitui DEC-023.
+
+**Contexto:** o header não é sticky; depois da Hero o mobile ficava até ~1.800px sem nenhum ponto de contato (Sobre + FAQ).
+
+**Decisão:** `MobileActionBar` fixa no rodapé da tela, só < 1280px: "Chamar no WhatsApp" (btn-primary) + "Ligar" (célula com hairline, como o header). Aparece quando o CTA principal da Hero não está inteiro na tela (já rolado ou cortado pela dobra em telas baixas) e some enquanto o CTA de urgência, os botões do CTA final ou o footer estão na tela. Oculta = fora da tela + `visibility: hidden` (fora do foco); entra com transform 240ms ease-out, sem transição em `prefers-reduced-motion`. Respeita `safe-area-inset-bottom`. Sem JS, não aparece. Tracking com `placement: action_bar`. Fica inerte com o menu aberto.
+
+**Impacto:** contato sempre ao alcance do polegar; em celulares baixos (≤ 360×640) e em 1024×768 a barra já aparece na primeira tela.
+
+**Adendo (critique 2):** `html { scroll-padding-bottom: 61px + safe area }` abaixo de 1280, para foco e âncoras pararem acima da barra (WCAG 2.4.11). Tab pela página inteira em 390×844: nenhum elemento focado fica sob a barra.
+
+## DEC-031 — Primeira dobra em telas baixas
+
+**Status:** aprovado (cliente, 2026-09-23).
+
+**Decisão:** mobile < 768 e ≤ 760 de altura: foto da Hero `clamp(180px, 100svh − 500px, 260px)` e espaçamentos internos menores. Desktop ≥ 1280 e ≤ 720 de altura: H1 limitado a 13svh e espaçamentos menores. Composições de referência (390×844, 1440×900) inalteradas.
+
+**Impacto:** "Chamar no WhatsApp" da Hero inteiro na primeira tela em 390×700 (termina em 657) e 1366×650 (termina em 614).
+
+## DEC-032 — Rótulos de CTA com o canal
+
+**Status:** aprovado (cliente, 2026-09-23). CONTENT.md atualizado.
+
+**Decisão:** header desktop "Solicitar guincho" → "Chamar no WhatsApp"; CTA de urgência "Enviar minha localização" → "Enviar localização no WhatsApp" (15px abaixo de 390px de largura); "Outras cidades" "Consultar atendimento" → "Consultar pelo WhatsApp". Mensagens pré-preenchidas inalteradas.
+
+**Impacto:** todo CTA diz para onde leva; o de localização deixa de sugerir envio automático de GPS.
+
+## DEC-033 — Piso do microtexto mono
+
+**Status:** aprovado (cliente, 2026-09-23).
+
+**Decisão:** nenhum texto abaixo de 11px no mobile nem abaixo de 11,5px no desktop (antes 9–10,5px: legenda do mapa, rótulos do Sobre, "BASE · PALHOÇA", rail da Hero, microcopy dos CTAs, footer). Família, caixa e tracking inalterados.
+
+**Impacto:** legibilidade ao ar livre; sem overflow de 320 a 1920.
+
+**Adendo (critique 2):** a primeira aplicação só subiu os textos abaixo de 11px; os de 11px no desktop (rail da Hero, rótulo de Serviços, nota do Sobre, números do FAQ, CTA final, footer) passaram a 11,5px. Medido: mínimo 11px em 320/390 e 11,5px em 1440.
+
+## DEC-034 — Header headroom no desktop
+
+**Status:** aprovado (cliente, 2026-09-24, após critique 2).
+
+**Contexto:** acima de 1280 o header não era sticky e não há barra; da faixa de urgência ao fim do FAQ (~2.000px) não havia contato na tela.
+
+**Decisão:** no desktop o próprio header (mesma altura de 88px, hairline, sem sombra) fica sticky e some ao rolar para baixo, voltando depois de 8px de rolagem para cima (`HeaderScroll`). Não some com foco dentro dele. Oculto = fora da tela e fora do foco. Transição de 240ms ease-out, nenhuma em `prefers-reduced-motion`. `scroll-padding-top: var(--header-height)` para âncoras e foco pararem abaixo dele. Mobile inalterado (tem a barra da DEC-030).
+
+**Impacto:** "Chamar no WhatsApp" e navegação a um gesto de distância em qualquer ponto da página; posições de 1440×900 no topo inalteradas.
+
+## DEC-035 — Como funciona: o que acontece depois do toque
+
+**Status:** aprovado (cliente delegou a redação, 2026-09-24). CONTENT.md atualizado.
+
+**Decisão:** passo 01 ganha "No WhatsApp, a mensagem já vai pronta." (fato: mensagens pré-preenchidas do CONTENT.md). Passo 03 troca "Com as informações necessárias, a Zion inicia o atendimento." por "Você fala diretamente com quem vai realizar o serviço, do primeiro contato ao atendimento." (fato já aprovado no Sobre). Nenhuma promessa nova.
+
+**Impacto:** o processo responde "o que acontece se eu tocar" e deixa de ser circular no passo 03.
+
+## DEC-036 — Alvos de toque do footer
+
+**Status:** aprovado (cliente, 2026-09-24).
+
+**Decisão:** links de navegação do footer com 44px de altura em telas de toque (`pointer: coarse`); com mouse o ritmo da referência continua. "Política de Privacidade" ganha área de toque invisível de ~45px (pseudo-elemento), sem mudar o desenho.
+
+**Impacto:** WCAG 2.5.5 no footer mobile.
+
+## DEC-037 — Imagens de IA fornecidas pelo cliente
+
+**Status:** aprovado (cliente pediu para aproveitar as imagens, 2026-09-24).
+
+**Decisão:** Hero passa a `zion-hero-truck-v2`; Sobre usa `zion-about-truck` no slot (DEC-021), com `business.aboutImageIsPlaceholder = true` para a guarda de release continuar exigindo a foto real; Serviços ganha um par de fotos (carro e moto na plataforma) abaixo do texto — no desktop ocupa o vazio da coluna esquerda e alinha com a hairline inferior da lista (16:9), no mobile fica entre o texto e a lista (4:3); `og-background` vira `src/app/opengraph-image.jpg` e o card do Twitter passa a `summary_large_image`. A imagem com barco não é usada (serviço não confirmado). Todas decorativas, alt vazio, radius 0, sem moldura.
+
+**Impacto:** Sobre deixa de ser um bloco cinza; Serviços perde o vazio no desktop; compartilhamentos passam a ter imagem. Hero em 1672px de largura (antes 2752): nítido até 1920 em DPR 1, um pouco mais suave em telas retina grandes.
+
+## DEC-038 — Critique 3: estrutura para dados reais, medida e texto enxuto
+
+**Status:** aprovado (cliente delegou a redação, 2026-09-24). CONTENT.md atualizado.
+
+**Decisão:**
+- `business.ownerName` / `business.ownerQuote` (null): com frase confirmada, o Sobre mostra a citação com hairline de 1px e atribuição mono. Nada aparece enquanto null.
+- Com `phoneDisplay` confirmado, o número aparece como texto no header (≥ 1440; abaixo disso não cabe ao lado da nav) e como segunda linha do "Ligar agora" do CTA final — no desktop o `tel:` nem sempre funciona.
+- Texto corrido limitado a 60ch (~70–76 caracteres reais) (Hero, Serviços, Como funciona, Urgência, Área, Sobre, CTA final); só muda a faixa 768–1279, onde as linhas chegavam a 85–103 caracteres.
+- A microcopy do CTA de urgência passa a ensinar a enviar a localização: "No WhatsApp: clipe ou + › Localização › enviar a localização atual."
+- "Palhoça, São José e Florianópolis" fica na Hero, na Área de atendimento, no mapa, no FAQ 02 e na região do footer. Saem de: serviço 01, microcopy de urgência, fato do Sobre (vira "CONTATO · Direto com quem atende"), corpo do CTA final e descrição do footer. Micro da Hero encurtada para "Está parado? Mande a localização pelo WhatsApp."
+
+**Impacto:** menos repetição (de ~12 para ~6 ocorrências), leitura confortável em tablets e notebooks pequenos, e o site pronto para receber nome, frase e telefone sem retrabalho.
 
 ## Como adicionar decisões
 

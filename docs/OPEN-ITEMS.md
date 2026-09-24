@@ -24,9 +24,9 @@ Sem esses dados a landing page não pode ser considerada pronta para mídia paga
 - [ ] Versão branca do logo.
 - [ ] Versão preta do logo.
 - [ ] Favicon.
-- [ ] Foto real do caminhão para substituir placeholder de IA na Hero.
-- [ ] Foto real para a seção Sobre. **Bloqueia produção:** a referência v2 só tem slot vazio; implementação usa bloco neutro (DEC-021).
-- [ ] Open Graph image.
+- [ ] Foto real do caminhão para substituir placeholder de IA na Hero (hoje `zion-hero-truck-v2`, IA — DEC-037).
+- [ ] Foto real para a seção Sobre (proprietário + caminhão). **Bloqueia produção:** hoje o slot mostra `zion-about-truck` (IA) com `business.aboutImageIsPlaceholder = true`, que mantém a guarda de release bloqueando (DEC-021, DEC-037).
+- [x] Open Graph image: `src/app/opengraph-image.jpg` 1200×630 (IA, DEC-037). Trocar por versão com foto real quando existir.
 
 ## P2 — informações comerciais
 

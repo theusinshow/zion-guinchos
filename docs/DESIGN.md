@@ -62,7 +62,7 @@ Não usar mono em toda seção apenas para reforçar o sistema.
 
 - Ink: `#080808`
 - Dark: `#111111`
-- Off-white: `#F3F2ED`
+- Off-white: `#FAFAF8` (era `#F3F2ED`; ver DEC-027)
 - White: `#F7F7F5`
 
 ### Neutros observados na referência

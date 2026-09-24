@@ -13,7 +13,7 @@ Navegação:
 
 CTA:
 
-- Solicitar guincho
+- Chamar no WhatsApp (DEC-032; antes "Solicitar guincho")
 
 ## Hero
 
@@ -41,7 +41,7 @@ CTA secundário:
 
 Microcopy:
 
-> Está parado agora? Envie sua localização pelo WhatsApp para agilizar o atendimento.
+> Está parado? Mande a localização pelo WhatsApp. (DEC-038; antes "Está parado agora? Envie sua localização pelo WhatsApp para agilizar o atendimento.")
 
 Dados de apoio:
 
@@ -62,7 +62,7 @@ Body:
 
 ### 01 — Guincho 24h
 
-> Remoção e transporte de veículos em Palhoça, São José, Florianópolis e região.
+> Remoção e transporte do veículo parado, a qualquer hora do dia ou da noite. (DEC-038; antes "Remoção e transporte de veículos em Palhoça, São José, Florianópolis e região.")
 
 ### 02 — Carros e utilitários
 
@@ -91,7 +91,7 @@ H2:
 
 ### 01 — Chame a Zion
 
-> Entre em contato pelo WhatsApp ou telefone.
+> Entre em contato pelo WhatsApp ou telefone. No WhatsApp, a mensagem já vai pronta. (DEC-035)
 
 ### 02 — Envie sua localização
 
@@ -99,7 +99,7 @@ H2:
 
 ### 03 — Receba o atendimento
 
-> Com as informações necessárias, a Zion inicia o atendimento.
+> Você fala diretamente com quem vai realizar o serviço, do primeiro contato ao atendimento. (DEC-035; antes "Com as informações necessárias, a Zion inicia o atendimento.")
 
 CTA:
 
@@ -117,7 +117,7 @@ Body:
 
 CTA primário:
 
-`ENVIAR MINHA LOCALIZAÇÃO`
+`ENVIAR LOCALIZAÇÃO NO WHATSAPP` (DEC-032; antes "Enviar minha localização")
 
 CTA secundário:
 
@@ -125,7 +125,7 @@ CTA secundário:
 
 Microcopy:
 
-> Atendimento 24 horas em Palhoça, São José e Florianópolis.
+> No WhatsApp: clipe ou + › Localização › enviar a localização atual. (DEC-038; antes "Atendimento 24 horas em Palhoça, São José e Florianópolis.")
 
 ## Área de atendimento
 
@@ -151,7 +151,7 @@ Texto secundário:
 
 CTA:
 
-`CONSULTAR ATENDIMENTO`
+`CONSULTAR PELO WHATSAPP` (DEC-032; antes "Consultar atendimento")
 
 ### Proibido publicar nesta etapa
 
@@ -190,8 +190,8 @@ Palhoça / SC
 **ATENDIMENTO**  
 24 horas · todos os dias
 
-**COBERTURA PRINCIPAL**  
-Palhoça · São José · Florianópolis
+**CONTATO**  
+Direto com quem atende (DEC-038; antes "COBERTURA PRINCIPAL · Palhoça · São José · Florianópolis")
 
 > Também realiza transportes para outras cidades sob consulta.
 
@@ -243,7 +243,7 @@ H2:
 
 Body:
 
-> Atendimento em Palhoça, São José e Florianópolis, além de transportes para outras cidades sob consulta.
+> Atendimento 24 horas, todos os dias. Transportes para outras cidades sob consulta. (DEC-038; antes "Atendimento em Palhoça, São José e Florianópolis, além de transportes para outras cidades sob consulta.")
 
 Microcopy:
 
@@ -261,7 +261,7 @@ CTA secundário:
 
 Descrição:
 
-> Guincho e auto socorro 24h em Palhoça, São José e Florianópolis.
+> Guincho e auto socorro 24h. Base em Palhoça/SC. (DEC-038; antes "Guincho e auto socorro 24h em Palhoça, São José e Florianópolis.")
 
 Navegação:
 

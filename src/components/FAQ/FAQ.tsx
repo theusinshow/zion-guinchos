@@ -3,15 +3,6 @@ import styles from './FAQ.module.css'
 
 const ITEMS = [
   {
-    question: 'A Zion atende 24 horas?',
-    answer: 'Sim. O atendimento funciona 24 horas, todos os dias, incluindo finais de semana e feriados.',
-  },
-  {
-    question: 'Quais regiões a Zion atende?',
-    answer:
-      'O atendimento principal acontece em Palhoça, São José e Florianópolis. Outros destinos também podem ser consultados.',
-  },
-  {
     question: 'Quais veículos podem ser transportados?',
     answer: 'A Zion atende carros, motos, caminhonetes, utilitários e veículos rebaixados.',
   },
@@ -34,12 +25,9 @@ export function FAQ() {
     <section data-section="duvidas" id="duvidas" className={styles.section} aria-labelledby="duvidas-title">
       <div className={styles.column} data-reveal>
         <h2 id="duvidas-title" className={styles.title}>
-          Antes de chamar,
+          Dúvidas
           <br />
-          <span className={styles.titleLight}>
-            talvez sua dúvida <br className={styles.mobileBreak} />
-            esteja aqui.
-          </span>
+          <span className={styles.titleLight}>frequentes.</span>
         </h2>
         <FAQList items={ITEMS} />
       </div>

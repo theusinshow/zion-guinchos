@@ -2,12 +2,6 @@ import Image from 'next/image'
 import { business } from '@/config/business'
 import styles from './About.module.css'
 
-const FACTS = [
-  { label: 'BASE', value: 'Palhoça / SC' },
-  { label: 'ATENDIMENTO', value: '24 horas · todos os dias' },
-  { label: 'CONTATO', value: 'Direto com quem atende' },
-]
-
 export function About() {
   return (
     <section data-section="sobre" id="sobre" className={styles.section} aria-labelledby="sobre-title">
@@ -48,17 +42,6 @@ export function About() {
             </figure>
           )}
         </div>
-
-        <dl className={styles.facts} data-reveal>
-          {FACTS.map((fact) => (
-            <div key={fact.label} className={styles.fact}>
-              <dt className={styles.factLabel}>{fact.label}</dt>
-              <dd className={styles.factValue}>{fact.value}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <p className={styles.note}>Também realiza transportes para outras cidades sob consulta.</p>
       </div>
     </section>
   )

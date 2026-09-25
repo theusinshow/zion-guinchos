@@ -18,7 +18,8 @@ from playwright.async_api import async_playwright
 ROOT = Path(__file__).resolve().parent.parent
 BASE = ROOT / "docs" / "reference" / "baseline"
 OUT = ROOT / "qa" / "out"
-SLUGS = ["hero", "servicos", "como-funciona", "cta-urgencia", "area-de-atendimento",
+SLUGS = ["hero", "servicos", "cta-urgencia",  # como-funciona removida (DEC-039)
+         "area-de-atendimento",
          "sobre", "duvidas", "cta-final", "footer"]
 DEVICES = {"desktop": 1440, "mobile": 390}
 

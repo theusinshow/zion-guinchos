@@ -54,27 +54,27 @@ Dados de apoio:
 
 H2:
 
-`O SUPORTE QUE VOCÊ PRECISA PARA SEGUIR EM FRENTE.`
+`O QUE A ZION ATENDE.` (DEC-039, versão curta)
 
 Body:
 
-> Atendimento para diferentes situações, desde uma emergência até o transporte agendado do seu veículo.
+> Da emergência ao transporte agendado. (DEC-039, versão curta)
 
 ### 01 — Guincho 24h
 
-> Remoção e transporte do veículo parado, a qualquer hora do dia ou da noite. (DEC-038; antes "Remoção e transporte de veículos em Palhoça, São José, Florianópolis e região.")
+> Remoção do veículo parado, a qualquer hora. (DEC-039, versão curta)
 
 ### 02 — Carros e utilitários
 
-> Atendimento para automóveis, caminhonetes e utilitários.
+> Automóveis, caminhonetes e utilitários. (DEC-039, versão curta)
 
 ### 03 — Motos
 
-> Transporte de motocicletas com atendimento 24 horas.
+> Transporte de motocicletas, 24 horas. (DEC-039, versão curta)
 
 ### 04 — Veículos rebaixados e acidentados
 
-> Atendimento e transporte de veículos rebaixados ou sem condições de continuar o trajeto.
+> Rebaixados ou sem condições de seguir viagem. (DEC-039, versão curta)
 
 ### Também atendemos
 
@@ -85,25 +85,7 @@ Body:
 
 ## Como funciona
 
-H2:
-
-`PEDIR UM GUINCHO PODE SER SIMPLES.`
-
-### 01 — Chame a Zion
-
-> Entre em contato pelo WhatsApp ou telefone. No WhatsApp, a mensagem já vai pronta. (DEC-035)
-
-### 02 — Envie sua localização
-
-> Informe onde você está e qual veículo precisa de atendimento.
-
-### 03 — Receba o atendimento
-
-> Você fala diretamente com quem vai realizar o serviço, do primeiro contato ao atendimento. (DEC-035; antes "Com as informações necessárias, a Zion inicia o atendimento.")
-
-CTA:
-
-`CHAMAR NO WHATSAPP`
+Seção removida na versão curta (DEC-039). O dado útil ("a mensagem já vai pronta") foi para o CTA de urgência.
 
 ## CTA de urgência
 
@@ -113,7 +95,7 @@ H2:
 
 Body:
 
-> Envie sua localização pelo WhatsApp e informe o veículo para agilizar o atendimento.
+> Envie sua localização e o veículo pelo WhatsApp. A mensagem já vai pronta. (DEC-039, versão curta)
 
 CTA primário:
 
@@ -135,7 +117,7 @@ H2:
 
 Body:
 
-> A Zion atende principalmente Palhoça, São José e Florianópolis, além de realizar transportes para outras cidades sob consulta.
+> Palhoça, São José e Florianópolis. Outras cidades sob consulta. (DEC-039, versão curta)
 
 Cidades principais:
 
@@ -147,7 +129,7 @@ Texto secundário:
 
 ### Outras cidades
 
-> Transportes e atendimentos para outros destinos também podem ser consultados diretamente com a Zion.
+Só o CTA, sem título nem texto (a frase do lead já cobre) (DEC-039, versão curta).
 
 CTA:
 
@@ -182,46 +164,29 @@ Body 2:
 
 > Do contato inicial ao atendimento, você fala diretamente com quem realizará o serviço.
 
-Dados:
-
-**BASE**  
-Palhoça / SC
-
-**ATENDIMENTO**  
-24 horas · todos os dias
-
-**CONTATO**  
-Direto com quem atende (DEC-038; antes "COBERTURA PRINCIPAL · Palhoça · São José · Florianópolis")
-
-> Também realiza transportes para outras cidades sob consulta.
+Linha de dados e nota removidas na versão curta (DEC-039): repetiam o rail da Hero.
 
 ## FAQ
 
 H2:
 
-`ANTES DE CHAMAR, TALVEZ SUA DÚVIDA ESTEJA AQUI.`
+`DÚVIDAS FREQUENTES.` (DEC-039, versão curta)
 
-### 01 — A Zion atende 24 horas?
+Removidas na versão curta (DEC-039): "A Zion atende 24 horas?" e "Quais regiões a Zion atende?" — a página já responde as duas.
 
-> Sim. O atendimento funciona 24 horas, todos os dias, incluindo finais de semana e feriados.
-
-### 02 — Quais regiões a Zion atende?
-
-> O atendimento principal acontece em Palhoça, São José e Florianópolis. Outros destinos também podem ser consultados.
-
-### 03 — Quais veículos podem ser transportados?
+### 01 — Quais veículos podem ser transportados?
 
 > A Zion atende carros, motos, caminhonetes, utilitários e veículos rebaixados.
 
-### 04 — Posso agendar um transporte?
+### 02 — Posso agendar um transporte?
 
 > Sim. Além de situações emergenciais, também é possível solicitar transporte agendado.
 
-### 05 — A Zion atende veículos acidentados?
+### 03 — A Zion atende veículos acidentados?
 
 > Sim. A Zion realiza remoção e transporte de veículos sem condições de continuar o trajeto.
 
-### 06 — Como solicito atendimento?
+### 04 — Como solicito atendimento?
 
 > Entre em contato pelo WhatsApp ou telefone e informe sua localização, o veículo e a situação.
 
@@ -266,7 +231,6 @@ Descrição:
 Navegação:
 
 - Serviços
-- Como funciona
 - Área de atendimento
 - Sobre
 - Dúvidas

@@ -29,7 +29,6 @@ Revisar quando telefone/serviços finais forem confirmados.
 IDs sugeridos:
 
 - `#servicos`
-- `#como-funciona`
 - `#area-de-atendimento`
 - `#sobre`
 - `#duvidas`

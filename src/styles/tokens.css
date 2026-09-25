@@ -45,7 +45,6 @@
    */
   --fs-hero-h1: clamp(54px, calc(38.4px + 4vw), 96px);
   --fs-servicos-h2: clamp(48px, calc(40.571px + 1.9048vw), 68px);
-  --fs-como-funciona-h2: clamp(46px, calc(36.343px + 2.4762vw), 72px);
   --fs-cta-urgencia-h2: clamp(38px, calc(28.343px + 2.4762vw), 64px);
   --fs-area-h2: clamp(44px, calc(38.057px + 1.5238vw), 60px);
   --fs-sobre-h2: clamp(40px, calc(28.114px + 3.0476vw), 72px);
@@ -69,12 +68,11 @@
 
   /* Ritmo vertical — mobile (DESIGN.md §8) */
   --hero-image-height: clamp(260px, 66.667vw, 560px); /* 390×260 no mobile; cresce sem virar faixa */
-  --about-visual-height: min(125vw, 760px); /* proporção 4/5 do slot mobile, teto = altura desktop */
+  --about-visual-height: min(75vw, 560px); /* 4:3 no mobile, teto = altura desktop (DEC-039; antes 4:5 e 760px) */
   --space-servicos: 72px var(--gutter-end) 56px var(--grid-gutter);
-  --space-como-funciona: 72px var(--gutter-end) 64px var(--grid-gutter);
   --space-cta-urgencia: 36px var(--gutter-end) 32px var(--grid-gutter);
   --space-area: 64px var(--gutter-end) 56px var(--grid-gutter);
-  --space-duvidas: 80px var(--gutter-end) 88px var(--grid-gutter);
+  --space-duvidas: 64px var(--gutter-end) 72px var(--grid-gutter); /* DEC-039 */
 }
 
 /*
@@ -108,17 +106,15 @@
     --header-height: 88px;
 
     /* 1280→1440: H2 de linha única da referência escalam para não quebrar (valor exato em 1440) */
-    --fs-como-funciona-h2: clamp(64px, 5vw, 72px);
     --fs-sobre-h2: clamp(63px, calc(5.625vw - 9px), 72px);
 
     /* Ritmo vertical — desktop (DESIGN.md §8) */
     --hero-visual-height: 720px;
     --hero-rail-height: 96px;
     --space-servicos: 128px var(--grid-gutter) 96px;
-    --space-como-funciona: 120px var(--grid-gutter) 128px;
     --space-cta-urgencia: 48px var(--grid-gutter);
     --space-area: 96px var(--grid-gutter) 88px;
-    --space-duvidas: 144px var(--grid-gutter) 160px;
+    --space-duvidas: 112px var(--grid-gutter) 128px; /* DEC-039 */
     --space-cta-final-top: 128px;
   }
 }

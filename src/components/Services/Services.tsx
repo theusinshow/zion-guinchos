@@ -50,22 +50,22 @@ const ICONS = {
 const SERVICES = [
   {
     title: 'Guincho 24h',
-    text: 'Remoção e transporte do veículo parado, a qualquer hora do dia ou da noite.',
+    text: 'Remoção do veículo parado, a qualquer hora.',
     icon: ICONS.guincho,
   },
   {
     title: 'Carros e utilitários',
-    text: 'Atendimento para automóveis, caminhonetes e utilitários.',
+    text: 'Automóveis, caminhonetes e utilitários.',
     icon: ICONS.carros,
   },
   {
     title: 'Motos',
-    text: 'Transporte de motocicletas com atendimento 24 horas.',
+    text: 'Transporte de motocicletas, 24 horas.',
     icon: ICONS.motos,
   },
   {
     title: 'Veículos rebaixados e acidentados',
-    text: 'Atendimento e transporte de veículos rebaixados ou sem condições de continuar o trajeto.',
+    text: 'Rebaixados ou sem condições de seguir viagem.',
     icon: ICONS.rebaixados,
   },
 ]
@@ -78,18 +78,12 @@ export function Services() {
       <div className={styles.top}>
         <div className={styles.intro} data-reveal>
           <h2 id="servicos-title" className={styles.title}>
-            O suporte que
+            O que a Zion
             <br />
-            você precisa
-            <br />
-            <span className={styles.titleLight}>
-              para seguir
-              <br />
-              em frente.
-            </span>
+            <span className={styles.titleLight}>atende.</span>
           </h2>
           <p className={styles.lead}>
-            Atendimento para diferentes situações, desde uma emergência até o transporte agendado do seu veículo.
+            Da emergência ao transporte agendado.
           </p>
           {/* DEC-037: ilustram os serviços 02 e 03. Placeholders de IA (ASSETS.md): decorativos, alt vazio (DEC-020). */}
           <div className={styles.photos}>

@@ -31,7 +31,6 @@ src/
 │  ├─ Header.tsx
 │  ├─ Hero.tsx
 │  ├─ Services.tsx
-│  ├─ HowItWorks.tsx
 │  ├─ UrgentCTA.tsx
 │  ├─ ServiceArea.tsx
 │  ├─ About.tsx

@@ -4,7 +4,6 @@ import { FinalCTA } from '@/components/FinalCTA/FinalCTA'
 import { Footer } from '@/components/Footer/Footer'
 import { Header } from '@/components/Header/Header'
 import { Hero } from '@/components/Hero/Hero'
-import { HowItWorks } from '@/components/HowItWorks/HowItWorks'
 import { MobileActionBar } from '@/components/MobileActionBar/MobileActionBar'
 import { Reveal } from '@/components/Reveal/Reveal'
 import { ServiceArea } from '@/components/ServiceArea/ServiceArea'
@@ -18,7 +17,6 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <HowItWorks />
         <UrgentCTA />
         <ServiceArea />
         <About />

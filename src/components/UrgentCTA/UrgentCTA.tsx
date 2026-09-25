@@ -12,7 +12,7 @@ export function UrgentCTA() {
             Está parado agora?
           </h2>
         </div>
-        <p className={styles.body}>Envie sua localização pelo WhatsApp e informe o veículo para agilizar o atendimento.</p>
+        <p className={styles.body}>Envie sua localização e o veículo pelo WhatsApp. A mensagem já vai pronta.</p>
       </div>
 
       <div className={styles.side} data-reveal>

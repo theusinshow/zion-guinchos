@@ -43,8 +43,7 @@ export function ServiceArea() {
         </span>
       </h2>
       <p className={styles.lead} data-reveal>
-        A Zion atende principalmente Palhoça, São José e Florianópolis, além de realizar transportes para outras cidades sob
-        consulta.
+        Palhoça, São José e Florianópolis. Outras cidades sob consulta.
       </p>
       <svg data-reveal className={styles.mapDesktop} viewBox="0 0 760 740" role="img" aria-label={MAP_LABEL}>
         <Shapes shapes={desktopShapes} />
@@ -116,10 +115,6 @@ export function ServiceArea() {
         </p>
       </div>
       <div className={styles.other} data-reveal>
-        <h3 className={styles.otherTitle}>Outras cidades</h3>
-        <p className={styles.otherText}>
-          Transportes e atendimentos para outros destinos também podem ser consultados diretamente com a Zion.
-        </p>
         <div>
           <ContactLink channel="whatsapp" placement="area" className={`btn btn-primary ${styles.button}`}>
             Consultar pelo WhatsApp <span className="btn-arrow" aria-hidden="true"><Arrow /></span>

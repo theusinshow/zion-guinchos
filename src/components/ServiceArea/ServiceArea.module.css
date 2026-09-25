@@ -169,26 +169,10 @@
 }
 
 .other {
-  display: grid;
-  gap: 12px;
   margin-top: 24px;
-  padding-top: 16px;
-  border-top: var(--hairline) solid var(--color-ink);
 }
 
-.otherTitle {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 20px;
-  text-transform: uppercase;
-}
 
-.otherText {
-  max-width: 60ch; /* medida de leitura (critique 3): ~70–76 caracteres reais */
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
-}
 
 .button {
   display: flex;
@@ -297,20 +281,10 @@
   }
 
   .other {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
     margin-top: 24px;
-    padding-top: 18px;
   }
 
-  .otherTitle {
-    font-size: 22px;
-  }
 
-  .otherText {
-    font-size: 15px;
-  }
 
   .button {
     display: inline-flex;

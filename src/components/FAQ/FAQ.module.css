@@ -112,10 +112,6 @@
     grid-column: 3 / span 8;
   }
 
-  .mobileBreak {
-    display: none;
-  }
-
   .list {
     margin-top: 64px;
   }

@@ -303,6 +303,20 @@ Não adicionar cards, gradients, glass, glow, pills ou decoração automática f
 
 **Impacto:** menos repetição (de ~12 para ~6 ocorrências), leitura confortável em tablets e notebooks pequenos, e o site pronto para receber nome, frase e telefone sem retrabalho.
 
+## DEC-039 — Versão curta
+
+**Status:** aprovado (cliente pediu "mais curto, mais direto ao ponto", 2026-09-24).
+
+**Decisão:**
+- Sai a seção "Como funciona" (os 3 passos eram óbvios para guincho); o dado útil ("a mensagem já vai pronta") vai para o corpo do CTA de urgência. Sai também o link do footer e o placement `como_funciona`.
+- Sobre compacto: sem a linha de fatos (repetia o rail da Hero) e sem a nota; foto em 4:3 no mobile (antes 4:5) e 560px no desktop (antes 760px). O espaço para nome/frase do proprietário (DEC-038) continua.
+- Serviços: título "O que a Zion atende.", lead "Da emergência ao transporte agendado." e uma linha por serviço.
+- Área de atendimento: lead "Palhoça, São José e Florianópolis. Outras cidades sob consulta."; "Outras cidades" vira só o CTA.
+- FAQ com 4 perguntas (saem "A Zion atende 24 horas?" e "Quais regiões?", já respondidas duas vezes), título "Dúvidas frequentes." e respiro vertical menor.
+- Pontos de contato intactos: Hero, CTA de urgência, CTA final, header headroom e barra do mobile.
+
+**Impacto:** página de ~7.400px para ~5.700px no mobile 390 (9 → 6,7 telas) e ~5.600px no desktop 1440; sai da composição da referência v2 nessas seções, por decisão do cliente.
+
 ## Como adicionar decisões
 
 Para novas decisões relevantes, criar entradas `DEC-018`, `DEC-019` etc. com:

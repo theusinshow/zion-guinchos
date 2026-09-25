@@ -7,7 +7,6 @@ import styles from './Footer.module.css'
 
 const NAV = [
   { href: '#servicos', label: 'Serviços' },
-  { href: '#como-funciona', label: 'Como funciona' },
   { href: '#area-de-atendimento', label: 'Área de atendimento' },
   { href: '#sobre', label: 'Sobre' },
   { href: '#duvidas', label: 'Dúvidas' },

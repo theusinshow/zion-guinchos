@@ -185,6 +185,8 @@ No mobile, a fotografia vira bloco próprio acima do conteúdo textual.
 
 ## 11. Como funciona
 
+**Removida na versão curta (DEC-039).** Regras mantidas só como histórico.
+
 - Tratar como fluxo 01 → 02 → 03.
 - Não repetir linguagem de cards/lista de Serviços.
 - Relação visual entre etapas pode usar linha/trajeto simples.
